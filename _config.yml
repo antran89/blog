@@ -1,0 +1,37 @@
+# Site wide configuration
+
+title: Skinny Bones
+description: "A lightweight site starter for Jekyll"
+logo: 120x120.gif
+teaser: 400x250.gif
+locale: en_US
+url: /skinny-bones-jekyll
+
+# Jekyll configuration
+
+sass:
+  sass_dir: _sass
+  style: compressed
+permalink: /:categories/:title/
+markdown: kramdown
+highlighter: pygments
+gems:
+  - jekyll-sitemap
+
+
+# Site owner
+owner:
+  name: Bongsoo Choy
+  web: 
+  email: 
+  twitter: 
+  bio: "Computer Vision Enthusiast"
+  avatar: bio-photo.jpg # 160x160 px image for author byline
+  google:
+    plus: 
+    ad-client: 
+    ad-slot: 
+  disqus-shortname:
+
+
+exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]
