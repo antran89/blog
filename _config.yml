@@ -1,11 +1,14 @@
 # Site wide configuration
 
-title: Skinny Bones
-description: "A lightweight site starter for Jekyll"
+title: Computer Vision Enthusiast 
+description: "Christopher B. Choy's Personal Blog"
 logo: 120x120.gif
 teaser: 400x250.gif
 locale: en_US
-url: /skinny-bones-jekyll
+# For github use the following
+# url: /skinny-bones-jekyll
+# For local debugging
+url:
 
 # Jekyll configuration
 
@@ -18,12 +21,14 @@ highlighter: pygments
 gems:
   - jekyll-sitemap
 
+# paginate:    7
+# paginate_path: "page:num"
 
 # Site owner
 owner:
-  name: Bongsoo Choy
+  name: Christopher B. Choy
   web: chrischoy.org
-  email: 
+  email: chrischoy208@gmail.com
   twitter: 
   bio: "Computer Vision Enthusiast"
   avatar: bio-photo.jpg # 160x160 px image for author byline
@@ -31,7 +36,7 @@ owner:
     plus: 
     ad-client: 
     ad-slot: 
-  disqus-shortname:
+  disqus-shortname: chrischoy
 
 
 exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]

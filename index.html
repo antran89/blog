@@ -1,0 +1,58 @@
+---
+layout: home
+title: BLOG
+description: "The personal blog of Christopher B. Choy, a doctoral candidate in Electrical Engineering at Stanford University."
+headline: An Engineer's Diary
+tags: [Christopher, Bongsoo, Choy, computer, vision, blog, stanford, university, KAIST]
+permalink: /
+image:
+  feature: wood-texture-1600x800.jpg
+---
+
+<div class="tiles">
+
+{% if site.paginate %}
+  {% for post in paginator.posts %}
+    <div class="tile">
+      <h2 class="post-title">
+          <a href="{{ site.url }}{{ post.url }}">
+              {{post.title}}
+          </a>
+      </h2>
+      <p class="post-excerpt">{{ post.content | strip_html | truncatewords:20 }}</p>
+    </div><!-- /.tile -->
+  {% endfor %}
+{% else %}
+   {% for post in site.posts limit:10 %}  
+     <div class="tile">
+       <h2 class="post-title">
+           <a href="{{ site.url }}{{ post.url }}">
+               {{post.title}}
+           </a>
+       </h2>
+       <p class="post-excerpt">{{ post.content | strip_html | truncatewords:20 }}</p>
+     </div><!-- /.tile -->
+  {% endfor %}
+{% endif %}
+<!-- TODO
+  <div class="tile">
+    <h2 class="post-title">
+        <a href="{{ site.url }}{{ postlist }}">
+            {{post.title}}
+        </a>
+    </h2>
+    <p class="post-excerpt">{{ post.content | strip_html | truncatewords:20 }}</p>
+  </div><!-- /.tile -->
+</div><!-- /.tiles -->
+
+
+<!-- Pagination links -->
+<!--<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ site.url }}/page{{ paginator.previous_page }}/" class="previous">Previous</a>
+  {% endif %}
+  <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a href="{{ site.url }}/page{{ paginator.next_page }}/" class="next">Next</a>
+  {% endif %}
+</div>-->
