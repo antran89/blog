@@ -26,6 +26,6 @@ Then, we roll out for time and examine the network.
 
 <img src="{{ site.url }}/images/research/RNN1.png">
 
-After brief observation, it seems clear that the nodes satisfy Markov property!.
+After brief observation, it is clear that the nodes satisfy Markov property!. We can extract the common structure and can train feed-forward network.
 
-
+<img src="{{ site.url }}/images/research/RNN2.png">
