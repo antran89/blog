@@ -23,5 +23,7 @@ I generally liked the class except the project part which requires a student to 
 These are the homeworks. The code they provided only use glut so I decided to make my own homework framework and used shader languages for fun.
 
 <iframe width="420" height="315" src="//www.youtube.com/embed/WKV6fe1yK6w" frameborder="0" allowfullscreen></iframe>
+
 <iframe width="420" height="315" src="//www.youtube.com/embed/y4NSU4s-_LU" frameborder="0" allowfullscreen></iframe>
+
 <iframe width="420" height="315" src="//www.youtube.com/embed/c87OyAZDS54" frameborder="0" allowfullscreen></iframe>
