@@ -14,7 +14,7 @@ image:
   teaser:
 ---
 
-[Caffe](cafffe.berkeley.org) is one of the most famous Convolutional Neural Network implementations. It is fast, easy to use and read the codes. However, currently, there is no Recurrent Neural Network layers for Caffe. The networks must be Directed Acyclic Graph to use backpropagation on Caffe.
+[Caffe](http://cafffe.berkeley.org) is one of the most famous Convolutional Neural Network implementations. It is fast, easy to use and read the codes. However, currently, there is no Recurrent Neural Network layers for Caffe. The networks must be Directed Acyclic Graph to use backpropagation on Caffe.
 
 But since the RNN training, Back Propagation Through Time (BPTT), can be done in the same ways as training CNN using backpropagation, we can modify layers and implement RNN BPTT using Caffe.
 
