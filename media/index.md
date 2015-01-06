@@ -1,9 +1,9 @@
 ---
 layout: archive
-title: "Sample Media Gallery"
+title: "Research"
 date: 2014-05-30T11:40:45-04:00
 modified:
-excerpt: "An archive of media posts, perfect for portfolios and galleries."
+excerpt: "An archive of my research thoughts, progresses and codes"
 tags: []
 image:
   feature:
@@ -11,7 +11,7 @@ image:
 ---
 
 <div class="tiles">
-{% for post in site.categories.media %}
-  {% include post-grid.html %}
+{% for post in site.categories.research %}
+  {% include post-list.html %}
 {% endfor %}
 </div><!-- /.tiles -->

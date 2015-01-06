@@ -1,17 +1,27 @@
 # Site navigation links
 
-- title: Post
+- title: All Posts
+  url: /posts/
+  excerpt: "Blog Posts"
+  image: 400x250.gif
+
+- title: Notes
+  url: /notes/
+  excerpt: "Notes"
+  image: 400x250.gif
+
+- title: Articles
   url: /articles/
   excerpt: "Blog Posts"
   image: 400x250.gif
 
-- title: Project
+- title: Projects
   url: /project/
   excerpt: "Projects"
   image: 400x250.gif
 
 - title: Research
-  url: /media/
+  url: /research/
   excerpt: "My Research"
   image: 400x250.gif
 
