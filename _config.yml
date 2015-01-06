@@ -1,13 +1,5 @@
 # Site wide configuration
 
-<<<<<<< HEAD
-title: Skinny Bones
-description: "A lightweight site starter for Jekyll"
-logo: 120x120.gif
-teaser: 400x250.gif
-locale: en_US
-url: //chrischoy.github.io/skinny-bones-jekyll
-=======
 title: Computer Vision Enthusiast 
 description: "Christopher B. Choy's Personal Blog"
 logo: 120x120.gif
@@ -17,7 +9,6 @@ locale: en_US
 url: /
 # For local debugging
 # url:
->>>>>>> gh-pages
 
 # Jekyll configuration
 
