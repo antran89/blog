@@ -3,11 +3,17 @@
 - title: Home
   url: /
 
-- title: Getting Started
-  url: /getting-started/
+- title: Post
+  url: /articles/
+
+- title: Project
+  url: /project/
+
+- title: Research
+  url: /media/
 
 - title: About
   url: /about/
 
-- title: Terms
-  url: /terms/
+# - title: Terms
+#   url: /terms/

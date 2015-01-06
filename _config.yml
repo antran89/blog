@@ -1,11 +1,23 @@
 # Site wide configuration
 
+<<<<<<< HEAD
 title: Skinny Bones
 description: "A lightweight site starter for Jekyll"
 logo: 120x120.gif
 teaser: 400x250.gif
 locale: en_US
 url: //chrischoy.github.io/skinny-bones-jekyll
+=======
+title: Computer Vision Enthusiast 
+description: "Christopher B. Choy's Personal Blog"
+logo: 120x120.gif
+teaser: 400x250.gif
+locale: en_US
+# For github use the following
+url: /
+# For local debugging
+# url:
+>>>>>>> gh-pages
 
 # Jekyll configuration
 
@@ -18,20 +30,23 @@ highlighter: pygments
 gems:
   - jekyll-sitemap
 
+# paginate:    7
+# paginate_path: "page:num"
 
 # Site owner
 owner:
-  name: Michael Rose
-  web: http://mademistakes.com
-  email: michael@mademistakes.com
-  twitter: mmistakes
-  bio: "Just another boring, tattooed, time traveling designer."
+  name: Christopher B. Choy
+  web: chrischoy.org
+  email: chrischoy208@gmail.com
+  twitter: 
+  bio: "Computer Vision Enthusiast"
   avatar: bio-photo.jpg # 160x160 px image for author byline
   google:
-    plus: +MichaelRoseDesign
-    ad-client: ca-pub-7328585512091257
-    ad-slot: 3049671934
-  disqus-shortname:
+    plus: 
+    ad-client: 
+    ad-slot: 
+
+disqus-shortname: chrischoy
 
 
 exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]

@@ -1,21 +1,31 @@
 # Site navigation links
 
-- title: Getting Started
-  url: /getting-started/
-  excerpt: "Everything you need to know to get started with Skinny Bones and Jekyll."
+- title: All Posts
+  url: /posts/
+  excerpt: "Blog Posts"
   image: 400x250.gif
 
-- title: Sample Articles
+- title: Notes
+  url: /notes/
+  excerpt: "Notes"
+  image: 400x250.gif
+
+- title: Articles
   url: /articles/
-  excerpt: "Examples of long form posts."
+  excerpt: "Blog Posts"
   image: 400x250.gif
 
-- title: Media
-  url: /media/
-  excerpt: "Examples of media posts perfect for showcasing work, photographs, etc."
+- title: Projects
+  url: /project/
+  excerpt: "Projects"
+  image: 400x250.gif
+
+- title: Research
+  url: /research/
+  excerpt: "My Research"
   image: 400x250.gif
 
 - title: About
   url: /about/
-  excerpt: "All about Skinny Bones for Jekyll."
+  excerpt: "About myself"
   image: 400x250.gif

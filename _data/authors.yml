@@ -1,5 +1,4 @@
 # Authors
-
 billy_rick:
   name: Billy Rick
   web: http://thewhip.com
@@ -10,11 +9,11 @@ billy_rick:
   google:
     plus: +BillyRick
 
-cornelius_fiddlebone:
-  name: Cornelius Fiddlebone
-  email: cornelius@thewhip.com
-  bio: "I ordered what?"
+chrischoy:
+  name: Christopher B. Choy
+  email: chrischoy208@gmail.com
+  bio: "Stanford AI Group, CVGLab Ph.D."
   avatar: bio-photo.jpg
-  twitter: rhymeswithsackit
+  twitter: 
   google:
-    plus: +CorneliusFiddlebone
+    plus: +chrischoy208

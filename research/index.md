@@ -1,9 +1,9 @@
 ---
 layout: archive
 title: "Research"
-date: 2014-05-30T11:40:45-04:00
+date: 2014-05-30T11:39:03-04:00
 modified:
-excerpt: "An archive of my research thoughts, progresses and codes"
+excerpt: 
 tags: []
 image:
   feature:
