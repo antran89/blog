@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Key mapping collision between vim-navigation and vim-latex"
-date: 2015-01-04T23:14:02-04:00
+date: 2015-01-04T23:14:02-08:00
 modified:
 categories: articles
 excerpt: "Key mapping collision for <C-J>"
