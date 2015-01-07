@@ -60,7 +60,7 @@ $$
 is the geodesic distance on 3D manifold of rotation matrix. First, the rotation matrix is orthogonal. Thus $R^{-1} = R^T$ and $R_i^T R_j$ is the same as $q_i^{-1}q_j$. Second, the exponential of any skew-symmetric matrix is always a rotation matrix!. The Rodrigues’ rotation formula uses the fact and Lie algebra group $so(3)$ to represent rotation. Let $u$ be the rotation axis and $\theta$ be the angle of rotation and the $L$ be the Lie group basis in $so(3)$. The rotation matrix $R$ for axis $u$ for $\theta$ is
 
 $$
-R = exp(\theta \mathbf{u}\dot\mathbf{L})
+R = \exp \left( \theta (\mathbf{u} \cdot \mathbf{L} )  \right)
 $$
 
 Thus using a logarithm of a matrix, we can extrac the angle of rotation.
