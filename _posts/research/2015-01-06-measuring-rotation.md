@@ -31,7 +31,8 @@ or
 $$
 \begin{align*}
 q_d    & = q_i^{-1} q_j\\
-\theta & = 2 \tan^{-1}\left( \frac{[q_d]_4}{\| q_d \|} \right)
+q_d    & = s + \mathbf{x} \mbox{ where } s \mbox{ is the scalar part}
+\theta & = 2 \tan^{-1}\left( \frac{s}{\| x \|} \right)
 \end{align*}
 $$
 
@@ -45,6 +46,9 @@ $$
 
 The quaternion has long been used in gaming and graphics for nice spherical linear interpolation (SLERP).
 
+{::comment}
+http://en.wikipedia.org/wiki/Axis–angle_representation
+{:/comment}
 
 Finally, using matrix logarithm to compute rotation. For instance let $R_i, R_j \in SO(3)$. Then
 
@@ -52,4 +56,13 @@ $$
 d_g(R_i, R_j) = \| \log( R_i^T R_j) \|_F
 $$
 
-is the geodesic distance on 3D manifold of rotation matrix.
+
+is the geodesic distance on 3D manifold of rotation matrix. First, the rotation matrix is orthogonal. Thus $R^{-1} = R^T$ and $R_i^T R_j$ is the same as $q_i^{-1}q_j$. Second, the exponential of any skew-symmetric matrix is always a rotation matrix!. The Rodrigues’ rotation formula uses the fact and Lie algebra group $so(3)$ to represent rotation. Let $u$ be the rotation axis and $\theta$ be the angle of rotation and the $L$ be the Lie group basis in $so(3)$. The rotation matrix $R$ for axis $u$ for $\theta$ is
+
+$$
+R = exp(\theta \mathbf{u}\dot\mathbf{L})
+$$
+
+Thus using a logarithm of a matrix, we can extrac the angle of rotation.
+
+
