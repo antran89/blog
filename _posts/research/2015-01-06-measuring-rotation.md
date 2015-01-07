@@ -3,7 +3,7 @@ layout: article
 title: "Measuring Rotation"
 date: 2015-01-06T23:17:02-08:00
 modified:
-categories: notes
+categories: research
 excerpt: "How do we measure the distance in rotation space"
 comments: true
 mathjax: true
@@ -13,8 +13,6 @@ image:
   feature:
   teaser:
 ---
-
-# Measuring Rotation
 
 Measuring the distance between two viewpoint can be tricky. Let’s say we create a view shpere. We can uniquely identify a point on the surface using longitude and altitude as we do on the Earth. We also call them as azimuth and elevation. Measuring distance between two viewpoint in this case would be the angle between two points on the view sphere each point being the viewpoint. Or we can just directly use the geodesic distance between them.
 

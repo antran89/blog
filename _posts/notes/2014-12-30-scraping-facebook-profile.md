@@ -9,8 +9,6 @@ tags: [post, intro, scraping, selenium, beautifulsoup]
 comments: true
 ---
 
-# Scraping Facebook Profile using Selenium
-
 Many modern websites dynamically load contents to speed up the loading time and enhance user experience. However this feature prevents inhibits basing static website scraping. One way to get around is simulating a browser. 
 
 `Selenium` is a browser simulator that uses popular web-browsers (Chrome, Safari, IE, etc.) and allows us to download contents from the web easily.

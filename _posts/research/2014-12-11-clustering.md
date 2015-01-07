@@ -5,7 +5,7 @@ except: "compare clustering methods in python, affinity propagation, k-means and
 date: 2014-12-11T12:14:32-08:00
 modified:
 ads: true
-category: research
+category: [notes, research]
 tags: [clustering, machine learning]
 image:
   feature: 
