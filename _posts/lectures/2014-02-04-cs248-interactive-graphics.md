@@ -29,4 +29,5 @@ My framework used C++/OpenGL4.1/GLFW3. I wanted to used OpenGL4.3 at that time b
 
 
 This is the one that I didn’t use my framework. The GLUT boxes are ugly but since I was more interested in implementing Inverse Jacobian, I used the starter kit from the class.
+
 <iframe width="420" height="315" src="//www.youtube.com/embed/c87OyAZDS54" frameborder="0" allowfullscreen></iframe>
