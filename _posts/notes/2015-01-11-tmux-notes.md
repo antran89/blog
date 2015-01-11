@@ -31,3 +31,15 @@ Keyboard short cut for rename
 
 <kbd>CTRL</kbd>+<kbd>b</kbd>, <kbd>$</kbd> [new-name]
 
+Detach from current session
+
+<kbd>CTRL</kbd>+<kbd>b</kbd>, <kbd>d</kbd>
+
+New vertical split
+
+<kbd>CTRL</kbd>+<kbd>b</kbd>, <kbd>%</kbd>
+
+Horizontal split
+
+<kbd>CTRL</kbd>+<kbd>b</kbd>, <kbd>"</kbd>
+
