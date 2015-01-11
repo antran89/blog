@@ -34,12 +34,26 @@ $$
 where $i,j \in \mathcal{R}$ being the unit vector pointing along $x$ and $y$ axes respectively. Then the camera projection ray is $k_f = i_f \times j_f$.
 
 
-# Stacking $U,V$.
+## Stacking $U,V$.
 
+First, we define a large matrix that concatenate $u$ and $v$ coordinate
 
-# Why center points
+$$
+W =
+\left[
+\being{array}{c}
+U \\
+V
+\end{array}
+\right]
+$$
 
-To prevent left singular vectors being the axis pointing the centroid of points, one must center the points.
+The $U, V \in \mathcal{R}^{F \cross P}$ are again defined as a concatenated $u$ coordinates for all points $P$ and frames $F$.
+
+## Why center points
+
+To prevent singular vectors affected by the centroid of the datapoin, they first center the point by computing  to  the centroid of points, one must center the points.
+
 
 # Robust Factorization using Marques-Costeira Algorithm
 
