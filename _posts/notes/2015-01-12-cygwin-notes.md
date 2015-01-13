@@ -19,7 +19,7 @@ Install `cygwin` and make sure to install `wget` when the selecting packages to 
 
 and follow the instructions on
 
-http://superuser.com/questions/41093/installing-cygwin-packages-from-the-command-line
+<http://superuser.com/questions/41093/installing-cygwin-packages-from-the-command-line>
 
 which is
 
@@ -41,4 +41,15 @@ apt-cyg install ncurses
 ~~~
 
 The `ncurses` include `tput` which allows nicer text-based interfaces.
+
+
+~~~
+cygstart “dir”
+~~~
+
+opens directory in windows explorer
+
+Check out some expert configuration on
+
+<http://guysherman.com/2013/11/02/my-ultimate-cygwin-setup/>
 
