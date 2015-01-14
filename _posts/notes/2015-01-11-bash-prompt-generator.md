@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Tmux Notes"
+title: "Nice Bash Prompt Generator"
 date: 2015-01-11T23:53:32-08:00
 modified:
 categories: notes
@@ -13,6 +13,8 @@ image:
   teaser:
 ---
 
-Found a good online bash prompt generator
+<img src="{{site.url}}/images/prompt.png" alt="">
 
-https://www.kirsle.net/wizards/ps1.html
+Setting up a custom bash prompt is fun but very painful. To relieve some pain, I'll share a link to an online real time bash prompt generator.
+
+<https://www.kirsle.net/wizards/ps1.html>

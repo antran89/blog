@@ -16,7 +16,7 @@ image:
 Tmux  commands and shortcuts
 
 
-# Tmux session commands
+### Tmux session commands
 
 ~~~
 tmux ls # list tmux sessions
