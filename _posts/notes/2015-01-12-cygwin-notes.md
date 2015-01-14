@@ -13,9 +13,12 @@ image:
   teaser:
 ---
 
-On windows, you can still use nice `bash` and almost all Linux files.
+Recently, our group purchased a Windows machine for graphics research. While I was searching for a good way to communicate with Linux machines, I found out that I can still use nice `bash` and almost all Linux files using `cygwin`
 
-Install `cygwin` and make sure to install `wget` when the selecting packages to install.
+Also there is a command similar to `apt-get` in cygwin, which is `apt-cyg`. To install the `apt-cyg` follow the instructions.
+
+
+First, Install `cygwin` and make sure to install `wget` when you select packages to install.
 
 and follow the instructions on
 
@@ -30,7 +33,7 @@ mv apt-cyg /usr/local/bin/
 apt-cyg install "package-to-install"
 ~~~
 
-To simulate linux environment make sure to install the followings
+To simulate Linux environment, install the following packages
 
 ~~~
 apt-cyg install bash-completion
@@ -43,13 +46,16 @@ apt-cyg install ncurses
 The `ncurses` include `tput` which allows nicer text-based interfaces.
 
 
+To open up a windows file explorer, type 
+
 ~~~
 cygstart “dir”
 ~~~
 
-opens directory in windows explorer
+where "dir" is the directory you want to open.
 
 Check out some expert configuration on
 
 <http://guysherman.com/2013/11/02/my-ultimate-cygwin-setup/>
 
+I'm using `tmux` + `vim` on the `cygwin` terminal but it's a bit slow.
