@@ -67,8 +67,9 @@ $$
 tr(A) & = tr(A)\\
 & = \sum_i^n e_i^T A^T e_i \\
 & = \sum_i^n e_i^T U^T \Sigma U e_i \\
-& = \sum_i^n u_i^T \sigma_i u_i \\
-& = \sum_i \sigma_i\\
+& = \sum_i^n \sum_j^n u_{ji}^T \sigma_j u_{ji} \\
+& = \sum_j^n \sigma_j \sigma_i^n u{ji}^2\\
+& = \sum_j^n \sigma_j
 & = \|A\|_{S_1}
 \end{align*}
 $$
