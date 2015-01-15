@@ -60,12 +60,11 @@ Matrix norms and singular values have special relationships. In this post, I wou
 
 ### Lemmas
 
-1. $ A \in \mathbf{S}^n \; tr(A) = \sum_i^n \lambda_i $
-=\lVert A \rVert_{S_1}$
+1. $ A \in \mathbf{S}^n \; tr(A) = \sum_i^n \lambda_i =\lVert A \rVert_{S_1}$
 
     Trace of a symmetric matrix $A$ is equal to the sum of eigen values.
     Let A be a symmetric matrix $A \in \mathcal{S}^{n}$. Then there exists a orthogonal matrix $U$ and diagonal matrix $\Lambda$ such that $A = U \Lambda U^T$. 
-    
+
     $$
     \begin{align*}
     tr(A) & = tr(A^T)\\
@@ -76,12 +75,12 @@ Matrix norms and singular values have special relationships. In this post, I wou
     & = \sum_j^n \lambda_j
     \end{align*}
     $$
-    
+
     Where $U = \[ u_1, u_2, u_3, \dots u_n\]$. We used the fact that $u_i^T u_i = 1$.
 
 2. $ A \in \mathbf{S}\_+^n \; tr(A) =\sum_i^n \lvert \sigma_i \rvert = \|A\|_{S_1} $
 
-    Trace of a positive semi-definite matrix $A$ is equal to the L1 norm of singular values, or is equal to the Schatten 1-Norm.
+    Trace of a positive semi-definite matrix $A$ is equal to the L1 norm of singular values, or is equal to the Schatten 1-Norm (Nuclear Norm).
 
     This is the direct extension of Lemma 1.
 
@@ -93,6 +92,8 @@ Matrix norms and singular values have special relationships. In this post, I wou
     & = \|A\|_{S_1}
     \end{align*}
     $$
+
+    Since the L1 norm of singular values enforce sparsity on the matrix rank, yhe result is used in many application such as low-rank matrix completion and matrix approximation.
 
 3. $ \lVert X\rVert_F = \sqrt{ \sum_i^n \sigma_i^2 } = \lVert X\rVert_{S_2} $
 
