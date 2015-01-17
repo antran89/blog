@@ -16,7 +16,10 @@ image:
 
 Recently, we are working on a large collection of SketchUp models.
 
-One small problem is that the `.skp` models are not usually compatible for rendering engines. So we have to convert the models
+One small problem is that the `.skp` models are not usually compatible for rendering engines. So we have to convert the models into popular formats.
+
+## Ruby Script
+
 When converting skp files into different format using Sketchup API on OSX, I found erratic behaviors. For instance,
 
 `Sketchup.active_model`

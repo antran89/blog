@@ -3,7 +3,7 @@ $(function() {
   var postURLs,
       isFetchingPosts = false,
       shouldFetchPosts = true,
-      postsToLoad = $(".tiles").children().length,
+      postsToLoad = $("#infinite-add").children().length,
       loadNewPostsThreshold = 3000;
 
   // Load the JSON file containing all URLs
@@ -44,7 +44,7 @@ $(function() {
     // Load as many posts as there were present on the page when it loaded
     // After successfully loading a post, load the next one
     var loadedPosts = 0,
-        postCount = $(".tiles").children().length,
+        postCount = $("#infinite-add").children().length,
         callback = function() {
           loadedPosts++;
           var postIndex = postCount + loadedPosts;
@@ -68,7 +68,7 @@ $(function() {
     var postURL = postURLs[index];
 
     $.get(postURL, function(data) {
-      $(data).find("#main").appendTo(".tiles");
+      $(data).find("#content-only").appendTo("#infinite-add");
       callback();
     });
   }
