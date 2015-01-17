@@ -28,11 +28,21 @@ Relative from the `$(CAFFE_HOME)`
 * /src/caffe/layers/new_layer.cu
 * /src/caffe/test/test_new_layer.cpp
 
-## caffe.proto
+## File 1: caffe.proto
 
 You have to give new index to your new layer. Look for `next available ID`. There are two lines containing the sentence. Increment the next available ID and define the new layer.
 
-## Defining a layer
+## File 2: layer_facctory.cpp
+
+You have to add two lines that defines switch case of layers
+
+## File 3: Layer Header
+
+Define your layer in the common layer header files.
+
+Use either common_layers.hpp or vision_layers.hpp depending on the type of the layer.
+
+## File 4 & 5 : Defining a layer
 
 The layer has to be a child of the `Layer` virtual class. The virtual functions that you have to implement are the ones defined as  `= 0` which are
 
@@ -46,17 +56,9 @@ virtual void Backward_cpu(const vector<Blob<Dtype>*>& top,
   vector<Blob<Dtype>*>* bottom) = 0;
 {% endhighlight %}
 
-Implement the functions and make sure to define in the header. Either common_layers.hpp or vision_layers.hpp is fine. Finally implement the test functions in `/src/caffe/test/test_new_layer.cpp`
+## File 6 : Test File
 
-{% highlight bash %}
-make
-make test
-./build/test/test_new_layer.testbin
-{% endhighlight %}
-
-## Test Predefined Functions
-
-There are several predifined test functions. Use those functions to unit-test your function.
+All the layers in the caffe must have the corresponding unit test file. The unit test must thoroughly check all the functionalities implemented. Make a file `/src/caffe/test/test_new_layer.cpp` and use provided caffe unit test macros.
 
 {% highlight cpp %}
 EXPECT_NEAR
@@ -65,7 +67,18 @@ EXPECT_LE
 EXPECT_EQ
 {% endhighlight %}
 
-Check Backprop using `GradientChecker`
+Finally, check Backprop using `GradientChecker`
+
+
+## Compile and Test
+
+Run the following lines on the `$CAFFE_HOME`.
+
+{% highlight bash %}
+make
+make test
+./build/test/test_new_layer.testbin
+{% endhighlight %}
 
 ## Implementation Detail
 
@@ -116,7 +129,79 @@ $$
 
 The $\frac{\partial E(y_i, \dots)}{\partial y_i}$ is defined in `top[n]->[c|g]pu_diff`
 
-## angle_to_trig.cu
+### angle_to_trig.cpp
+
+{% highlight cpp %}
+#include <algorithm>
+#include <functional>
+#include <utility>
+#include <vector>
+
+#include "caffe/layer.hpp"
+#include "caffe/util/io.hpp"
+#include "caffe/util/math_functions.hpp"
+#include "caffe/vision_layers.hpp"
+
+namespace caffe {
+
+template <typename Dtype>
+void AngleToTrigLayer<Dtype>::Reshape(
+  const vector<Blob<Dtype>*>& bottom, vector<Blob<Dtype>*>* top) {
+  // Takes arbitrary number of angles in radian and return sin and cos of the
+  // angles. sines and cosines will be concatenated
+  // [sin_1, sin_2, ..., sin_n, cos_1, cos_2, ...,cos_n]
+  CHECK_EQ(bottom[0]->height(), 1);
+  CHECK_EQ(bottom[0]->width(), 1);
+  // num, channels, height, width,
+  (*top)[0]->Reshape(bottom[0]->num(), 2 * bottom[0]->channels(), 1, 1);
+  tmp_.Reshape(bottom[0]->num(), bottom[0]->channels(), 1, 1);
+}
+
+template <typename Dtype>
+void AngleToTrigLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,
+    vector<Blob<Dtype>*>* top) {
+
+  int n_channel = bottom[0]->channels();
+  const Dtype* bottom_data = bottom[0]->cpu_data();
+  Dtype* top_data = (*top)[0]->mutable_cpu_data();
+
+  for (int n = 0; n < bottom[0]->num(); ++n) {
+    // #(angles) = #(channel)
+    caffe_sin(n_channel, bottom_data + bottom[0]->offset(n),
+            top_data + (*top)[0]->offset(n));
+    caffe_cos(n_channel, bottom_data + bottom[0]->offset(n),
+            top_data + (*top)[0]->offset(n, n_channel));
+  }
+}
+
+template <typename Dtype>
+void AngleToTrigLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,
+    const vector<bool>& propagate_down, vector<Blob<Dtype>*>* bottom) {
+  const int n_channel = (*bottom)[0]->channels();
+  const Dtype* top_data = top[0]->cpu_data(); // [sin(x) cos(x)], no need to compute again
+  const Dtype* top_diff = top[0]->cpu_diff();
+  if (propagate_down[0]) {
+    Dtype* bottom_diff = (*bottom)[0]->mutable_cpu_diff();
+    for (int n = 0; n < top[0]->num(); ++n) {
+      caffe_mul(n_channel, top_diff + top[0]->offset(n),
+              top_data + top[0]->offset(n, n_channel),
+              bottom_diff + (*bottom)[0]->offset(n));
+      caffe_mul(n_channel, top_diff + top[0]->offset(n, n_channel),
+              top_data + top[0]->offset(n),
+              tmp_.mutable_cpu_data());
+      caffe_sub(n_channel, bottom_diff + (*bottom)[0]->offset(n),
+              tmp_.cpu_data(),
+              bottom_diff + (*bottom)[0]->offset(n));
+    }
+  }
+}
+
+INSTANTIATE_CLASS(AngleToTrigLayer);
+
+}  // namespace caffe
+{% endhighlight %}
+
+### angle_to_trig.cu
 
 {% highlight cpp %}
 #include <algorithm>
