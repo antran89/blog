@@ -3,7 +3,7 @@ layout: article
 title: "Interesting Properties of Matrix Norms and Singular Values"
 date: 2015-01-13T01:40:06-0800
 modified: 2015-01-14T01:53:11-0800
-categories: notes
+categories: research
 comments: true
 excerpt:
 mathjax: true
