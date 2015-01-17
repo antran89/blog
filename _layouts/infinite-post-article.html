@@ -51,11 +51,15 @@
     {% include navigation-sliding.html %}
 
     <div id="page-wrapper">
+      <div id="main">
+        <div id="content" class="page-content" itemprop="articleBody">
       {% include browser-upgrade.html %}
 
       {{ content }}
 
       {% include footer.html %}
+        </div>
+      </div>
     </div>
 
     <script src="{{ site.url }}/js/vendor/jquery-1.9.1.min.js"></script>
