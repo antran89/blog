@@ -19,25 +19,28 @@ To render set in inline mathjax, I had to used “\\\\\{“ instead of “\\\{�
 
 The following line was rendered correctly
 
-~~~
+{% highlight tex %}
 $ \lVert A \rVert_1 = \max_j \sum_i^n \lvert a_{ij} \rvert $
-~~~
+{% endhighlight %}
 
 But when I added curly bracket on summation subscript, it wasn’t rendered.
 
-~~~
+{% highlight tex %}
 $ \lVert A \rVert_1 = \max_j \sum_{i}^n \lvert a_{ij} \rvert $
-~~~
+{% endhighlight %}
 
 Turns out that you have to escape the underscore `_` too...
 
 
 ### Declare Operators
 
+{% highlight html %}
+{% raw %}
 <div tyle="display:none">
   $
     \DeclareMathOperator*{\argmin}{arg\,min}
     \newcommand{\csch}{\mathop{\rm csch}\nolimits}
   $
 </div>
-
+{% endraw %}
+{% endhighlight %}

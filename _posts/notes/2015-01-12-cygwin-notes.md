@@ -26,31 +26,31 @@ and follow the instructions on
 
 which is
 
-~~~
+{% highlight bash %}
 wget http://apt-cyg.googlecode.com/svn/trunk/apt-cyg
 chmod +x apt-cyg
 mv apt-cyg /usr/local/bin/
 apt-cyg install "package-to-install"
-~~~
+{% endhighlight %}
 
 To simulate Linux environment, install the following packages
 
-~~~
+{% highlight bash %}
 apt-cyg install bash-completion
 apt-cyg install curl
 apt-cyg install git
 apt-cyg install python
 apt-cyg install ncurses
-~~~
+{% endhighlight %}
 
 The `ncurses` include `tput` which allows nicer text-based interfaces.
 
 
 To open up a windows file explorer, type 
 
-~~~
+{% highlight bash %}
 cygstart “dir”
-~~~
+{% endhighlight %}
 
 where "dir" is the directory you want to open.
 

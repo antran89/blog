@@ -18,12 +18,12 @@ Tmux  commands and shortcuts
 
 ### Tmux session commands
 
-~~~
+{% highlight bash %}
 tmux ls # list tmux sessions
 tmux attach-session -t [new-name] # attach to existing session
 tmux rename-session [-t current-name] [new-name] # rename session
 tmux detach -a # detach all attached session
-~~~
+{% endhighlight %}
 
 The command `tmux detach -a` is the hot fix for small windowed tmux session. The tmux session always is fixed with the smallest tmux session window so detaching all the other sessions can be convenient when you want to resize session.
 

@@ -5,6 +5,7 @@ except: ""
 date: 2015-01-16T19:49:25-0800
 modified:
 ads: true
+toc: true
 category: research
 tags: [Caffe, Layer]
 image:
@@ -16,7 +17,7 @@ mathjax : true
 Caffe is one of the most popular open-source neural network implementation [^1]. It is modular, clean and fast. To modify the network to my liking, I defined a layer that produces cosine and sine of radian inputs.
 
 
-### Files to modify or create
+## Files to modify or create
 
 Relative from the `$(CAFFE_HOME)`
 
@@ -27,15 +28,15 @@ Relative from the `$(CAFFE_HOME)`
 * /src/caffe/layers/new_layer.cu
 * /src/caffe/test/test_new_layer.cpp
 
-### caffe.proto
+## caffe.proto
 
 You have to give new index to your new layer. Look for `next available ID`. There are two lines containing the sentence. Increment the next available ID and define the new layer.
 
-### Defining a layer
+## Defining a layer
 
 The layer has to be a child of the `Layer` virtual class. The virtual functions that you have to implement are the ones defined as  `= 0` which are
 
-~~~
+{% highlight cpp %}
 virtual void Reshape(const vector<Blob<Dtype>*>& bottom,
   vector<Blob<Dtype>*>* top) = 0;
 virtual void Forward_cpu(const vector<Blob<Dtype>*>& bottom,
@@ -43,28 +44,30 @@ virtual void Forward_cpu(const vector<Blob<Dtype>*>& bottom,
 virtual void Backward_cpu(const vector<Blob<Dtype>*>& top,
   const vector<bool>& propagate_down,
   vector<Blob<Dtype>*>* bottom) = 0;
-~~~
+{% endhighlight %}
 
 Implement the functions and make sure to define in the header. Either common_layers.hpp or vision_layers.hpp is fine. Finally implement the test functions in `/src/caffe/test/test_new_layer.cpp`
 
-~~~
+{% highlight bash %}
 make
 make test
 ./build/test/test_new_layer.testbin
-~~~
+{% endhighlight %}
 
-### Test Predefined Functions
+## Test Predefined Functions
 
 There are several predifined test functions. Use those functions to unit-test your function.
 
-    EXPECT_NEAR
-    EXPECT_GE
-    EXPECT_LE
-    EXPECT_EQ
+{% highlight cpp %}
+EXPECT_NEAR
+EXPECT_GE
+EXPECT_LE
+EXPECT_EQ
+{% endhighlight %}
 
 Check Backprop using `GradientChecker`
 
-### Implementation Detail
+## Implementation Detail
 
 * Blob offset
 
@@ -78,12 +81,13 @@ Check Backprop using `GradientChecker`
 
     There are several CUDA macros which come very handy when making `Forward_gpu` and `Backward_gpu`
 
-        // CUDA: grid stride looping
-        #define CUDA_KERNEL_LOOP(i, n) \
-          for (int i = blockIdx.x * blockDim.x + threadIdx.x; \
-               i < (n); \
-               i += blockDim.x * gridDim.x)
-
+    {% highlight cuda %}
+    // CUDA: grid stride looping
+    #define CUDA_KERNEL_LOOP(i, n) \
+      for (int i = blockIdx.x * blockDim.x + threadIdx.x; \
+           i < (n); \
+           i += blockDim.x * gridDim.x)
+    {% endhighlight %}
 
 * CUDA brief summary
 
@@ -112,9 +116,9 @@ $$
 
 The $\frac{\partial E(y_i, \dots)}{\partial y_i}$ is defined in `top[n]->[c|g]pu_diff`
 
-#### angle_to_trig.cu
+## angle_to_trig.cu
 
-~~~cuda
+{% highlight cpp %}
 #include <algorithm>
 #include <vector>
 
@@ -208,7 +212,7 @@ INSTANTIATE_CLASS(AngleToTrigLayer);
 
 
 }  // namespace caffe
-~~~
+{% endhighlight %}
 
 [^1]: <http://caffe.berkeleyvision.org>
 

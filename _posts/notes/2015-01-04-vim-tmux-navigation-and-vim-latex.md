@@ -17,9 +17,13 @@ I just added the `vim-latex` plugin and found out that the vim-tmux navigation <
 
 1. I remap the <c-j> to :TmuxNavigateDown<cr> at the end of .vimrc but it does nothing. How odd!
 
+    {% highlight vim %}
+    {% raw %}
     map <silent> <C-J> :TmuxNavigateDown<cr>
     nmap <silent> <C-J> :TmuxNavigateDown<cr>
     nnoremap <silent> <C-J> :TmuxNavigateDown<cr>
+    {% endraw %}
+    {% endhighlight %}
 
 2. Typed `:verbose map <c-j>` and got key mappings for <c-j>
 
