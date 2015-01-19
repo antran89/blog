@@ -24,15 +24,19 @@ and add the following lines to  `~/.ipython/profile_default/static/custom/custom
 {% highlight javascript %}
 $([IPython.events]).on('notebook_loaded.Notebook', function(){
     IPython.toolbar.add_buttons_group([
-                {   
-                'label'   : 'run qtconsole',
-                'icon'    : 'icon-terimnal',
-                'callback': function(){IPython.notebook.kernel.execute('%qtconsole')}
-                } 
-                // add more button here if needed.
-            ]); 
+            {   
+            'label'   : 'run qtconsole',
+            'icon'    : 'icon-terimnal',
+            'callback': function(){IPython.notebook.kernel.execute('%qtconsole')}
+            } 
+            // add more button here if needed.
+        ]); 
 });
 {% endhighlight %}
 
+
+And you’ll get qtconsole button on the right next to the cell toolbar menu.
+
+<img src="{{site.url}}/images/qtconsole_box.png">
 
 [^1]: https://github.com/ipython/ipython/issues/2593/
