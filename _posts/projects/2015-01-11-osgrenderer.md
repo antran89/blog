@@ -41,7 +41,7 @@ IPython Notebook Demo
 Python
 ------
 
-```python
+{% highlight python %}
 import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline
@@ -75,12 +75,12 @@ plt.show()
 # depth show
 plt.imshow(1-depth)
 plt.show()
-```
+{% endhighlight %}
 
 Matlab
 -----
 
-```matlab
+{% highlight matlab %}
 % Add binary path
 addpath('./bin');
 
@@ -132,11 +132,15 @@ renderer.getProjectionMatrix()
 
 % You must clear the memory before you exit
 renderer.delete(); clear renderer;
-```
+{% endhighlight %}
 
 Output 
 
 ![](https://dl.dropboxusercontent.com/u/57360783/MatlabRenderer/rendering_with_depth.png)
 
 
+Download
+-------
+
+<http://github.com/chrischoy/OSGRenderer>
 
