@@ -46,3 +46,7 @@ Automatic pdb calling has been turned OFF
 You can use interactive pdb to print variables, run python commands or use all standard pdb commands (step, up, down, clear, break, quit).
 Once you are done, you can switch off the automatic pdb calling mode by typing `%pdb` again.
 
+
+- Adding Open QTConsole Button
+
+<http://{{site.url}}/notes/ipython-qtconsole.html>
