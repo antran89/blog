@@ -16,7 +16,7 @@ image:
 Tmux  commands and shortcuts
 
 
-### Tmux session commands
+## Tmux session commands
 
 {% highlight bash %}
 tmux ls # list tmux sessions
@@ -43,3 +43,10 @@ Horizontal split
 
 <kbd>CTRL</kbd>+<kbd>b</kbd>, <kbd>"</kbd>
 
+
+## New session inside tmux
+
+{% highlight bash %}
+TMUX= tmux new-session -d -s name
+tmux switch-client -t name
+{% endhighlight %}
