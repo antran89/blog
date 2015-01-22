@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Batch Render Sketchup Files"
-date: 2015-01-05T22:33:34-08:00
+date: 2015-01-21T22:11:49-0800
 modified:
 categories: research
 excerpt:
