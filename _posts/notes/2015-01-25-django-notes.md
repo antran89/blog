@@ -25,4 +25,15 @@ python manage.py makemigrations
 python manage.py migrate
 {% endhighlight %}
 
+## Django Setting
+
+Go to site root directory.
+
+{% highlight bash %}
+export DJANGO_SETTINGS_MODULE=yoursitename.settings
+python
+>>> import django
+>>> django.setup()
+{% endhighlight %}
+
 

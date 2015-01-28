@@ -15,8 +15,10 @@ image:
 
 Tmux  commands and shortcuts
 
+## Scoll
 
-## Tmux session commands
+
+## Session commands
 
 {% highlight bash %}
 tmux ls # list tmux sessions
