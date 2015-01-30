@@ -16,20 +16,20 @@ image:
 ---
 
 
-I’m TAing CS231A, Computer Vision 2015 winter quarter. Studying lecture materials as a student is very different from as working as a teaching assistance. You have to be fully prepared for the TA sessions and there are subtleties which students ask often so  I want to summarize important things on this notes to remind myself or help readers understand concepts better.
+I’m TAing CS231A, Computer Vision in winter quarter, 2015. Studying lecture materials as a student is very different from working as a teaching assistant You have to be fully prepared for the TA sessions, and there are subtleties which students ask often, so I want to summarize important things in these notes to remind myself or help readers understand concepts better.
 
-I’ll follow the notations on *Multiple View Geometry in Computer Vision by Hartley and Zisserman*.
+I’ll follow the notations on *Multiple View Geometry in Computer Vision* by Hartley and Zisserman.
 
 ## Homogeneous representation of a line
 
-A line in $\mathcal{R}^2$ can be represented as $ax+by+c = [x, y, 1] l = 0$ where $l = [a, b, 1]^T$. By adding additional element, we can represent lines and points in a consistent way which ease some computation. We call this *homogeneous* representation or coordinate.
+A line in $\mathcal{R}^2$ can be represented as $ax+by+c = [x, y, 1] l = 0$ where $l = [a, b, 1]^T$. By adding an additional element, we can represent lines and points in a consistent way, which makes some computation easier. We call this a *homogeneous* representation or coordinate.
 
 The point, in this *homogeneous* coordinate is $\mathbf{x} = [x,y,1]^T$. Then a line crossing $x_1$ and $x_2$ can be easily computed using $x_1 \times x_2$ since the cross product of vectors produces a vector perpendicular to the others. By the same logic, the intersection of two lines $l_1$ and $l_2$ is $l_1 \times l_2$. 
 
 
 ## Projective Transformations
 
-Projectivity, projective transformation or homograpghy, is an invertible mapping $h$ from $\mathcal{P}^2 \rightarrow \mathcal{P}^2$ such that points on a line maps to also three points on a line. A point after a projective transformation $H$ is $x’ = Hx$ and a line after the same transformation is $H^{-T}l$. Proof. $l^Tx = 0$ satisfies a line equation and $l^T H^{-1} Hx = 0$. Since $x’ = Hx$ we have $(H^{-T}l)^Tx’ = 0$. Thus, $l’ = H^{-T}l$.
+Projectivity - projective transformation or homography - is an invertible mapping $h$ from $\mathcal{P}^2 \rightarrow \mathcal{P}^2$ such that points on a line map to also three other points on another line. A point after a projective transformation $H$ is $x’ = Hx$, and a line after the same transformation is $H^{-T}l$. Proof. $l^Tx = 0$ satisfies a line equation and $l^T H^{-1} Hx = 0$. Since $x’ = Hx$ we have $(H^{-T}l)^Tx’ = 0$. Thus, $l’ = H^{-T}l$.
 
 ## Inhomogeneous coordinate
 
