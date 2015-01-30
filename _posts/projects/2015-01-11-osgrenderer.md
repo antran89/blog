@@ -30,7 +30,6 @@ IPython Notebook Demo
 
 <http://nbviewer.ipython.org/gist/chrischoy/19f7765c401973d28243>
 
-
 Python
 ------
 

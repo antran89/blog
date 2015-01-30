@@ -36,7 +36,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mycert.pem -out myce
 
 If it gives you some stupid error that involves `/opt/anaconda1anaconda2anaconda3/ssl/`[^2], update openssl
 
-{% highlight %}
+{% highlight bash %}
 conda update openssl
 {% endhighlight %}
 
