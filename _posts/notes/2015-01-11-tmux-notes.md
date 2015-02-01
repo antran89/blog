@@ -63,4 +63,26 @@ tmux switch-client -t name
     <kbd>CTRL</kbd>+<kbd>b</kbd>C-a :move-pane -t :3.2
                    split window 3's pane 2 and move the current pane there
 
+## Cannot Connect to X server within TMUX
 
+check your DISPLAY environment variable and set it to your current display
+
+{% highlight bash %}
+echo $DISPLAY
+export DISPLAY=:0.0
+{% endhighlight %}
+
+If you want to set the display automatically, add the following command on the `~/.tmux.conf`.[^1]
+
+{% highlight bash %}
+set-environment -g DISPLAY $DISPLAY
+{% endhighlight %}
+
+Or use the following to retrieve environment variables. [^2]
+
+{% highlight bash %}
+set-option -ga update-environment ‘ YOUR_VAR’
+{% endhighlight %}
+
+[^1]: http://sourceforge.net/p/tmux/mailman/message/32267463/
+[^2]: http://stackoverflow.com/questions/8645053/how-do-i-start-tmux-with-my-current-environment

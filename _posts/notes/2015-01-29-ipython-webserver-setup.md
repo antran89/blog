@@ -54,13 +54,13 @@ Then, modify your default profile on `~/.ipython/profile_default/ipython_noteboo
 c = get_config()
 
 # Kernel config
-c.IPKernelApp.pylab = ‘inline’  # if you want plotting support always
+c.IPKernelApp.pylab = 'inline'  # if you want plotting support always
 
 # Notebook config
-c.NotebookApp.certfile = u’/absolute/path/to/your/certificate/mycert.pem’
-c.NotebookApp.ip = ‘*’
+c.NotebookApp.certfile = u'/absolute/path/to/your/certificate/mycert.pem'
+c.NotebookApp.ip = '*'
 c.NotebookApp.open_browser = False
-c.NotebookApp.password = u’sha1:bcd259ccf...[your hashed password here]’
+c.NotebookApp.password = u'sha1:bcd259ccf...[your hashed password here]'
 # It is a good idea to put it on a known, fixed port
 c.NotebookApp.port = 9999
 {% endhighlight %}
@@ -71,6 +71,9 @@ c.NotebookApp.port = 9999
 ipython notebook
 {% endhighlight %}
 
+## Not Trusted Certificate
+
 
 [^1]: http://ipython.org/ipython-doc/1/interactive/public_server.html
 [^2]: https://github.com/ContinuumIO/anaconda-issues/issues/137
+[^3]: http://stackoverflow.com/questions/26614570/my-ssl-certificate-is-not-trusted
