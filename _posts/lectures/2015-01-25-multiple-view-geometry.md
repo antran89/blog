@@ -160,7 +160,7 @@ x^T C x & = (H^{-1}x’)^T C (H^{-1}x) \\
 \end{align}
 $$
 
-Similarly, $C^{*\prime}= HC^*H^T$.
+Similarly, $C^{* \prime} = HC^*H^T$.
 
 ### Conic Dual to the Circular Points
 
@@ -169,8 +169,8 @@ The conic is degenerate if $C$ is rank deficient. For instance, two lines $l$ an
 For the circular points, we can define a dual conic $C^T\_\infty  = IJ^T + JI^T$ and is fixed under similarity transformation.
 
 $$
-C_\infty^{*\prime} = H_s C_\infty^* H_s^T = C_\infty^* = 
-\left
+C_\infty^{* \prime}  = H_s C_\infty^* H_s^T = C_\infty^* = 
+\left[
 \begin{array}{ccc}
 1&0&0\\
 0&1&0\\
@@ -179,17 +179,19 @@ C_\infty^{*\prime} = H_s C_\infty^* H_s^T = C_\infty^* =
 \right]
 $$
 
+This is too fancy interpretation of an identity matrix with the last element 0. However, this interpretation leads to intuitive understanding of $\mathbb{P}^2$.
 Interestingly, $l\_\infty$ is the null vector of $C\_\infty^*$.
 
 Using the definition, we can define the angle between two lines $l$ and $m$ in $\mathbb{P}^2$.
+
 $$
 \begin{align}
-\cos (\theta) & = \frac{l_1m_1 + l_2 m_2}{\sqrt{(l_1^2 + l_2^2)(m_1^2_m_2^2)}}\\
+\cos (\theta) & = \frac{l_1m_1 + l_2 m_2}{\sqrt{(l_1^2 + l_2^2)(m_1^2 + m_2^2)}}\\
 & = \frac{l^T C_\infty^* m}{\sqrt{(l^TC_\infty^* l)(m^TC_\infty^* m)}}
+\end{align}
 $$
 
-The second equation has a consistent representation under perspective transformation. i.e. $l’ = H^{-T}l$ and $C^{*\prime} = HC^*H^T$. Thus the angle between lines in $\mathbb{P}^2$ can be uniquely represented using the dual conic of circular points.
-
+The second equation has a consistent representation under perspective transformation. i.e. $l’ = H^{-T}l$ and $C^{* \prime} = HC^*H^T$. Thus the angle between lines in $\mathbb{P}^2$ can be uniquely represented using the dual conic of circular points.
 
 ## Projective Geometry in 3D
 
