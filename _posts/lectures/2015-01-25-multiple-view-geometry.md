@@ -262,7 +262,12 @@ $$
 
 Since the rows of the left matrix is linear dependent.
 
-## Homography of camera movements
+
+## Camera Model
+
+TODO
+
+### Homography of camera movements
 
 First, consider two cameras with the same camera center.
 
@@ -304,10 +309,17 @@ $$
 
 The conic is defined in the imaginary space and is important for camera calibration. The conic is invariant under similarity transformation. The absolute conic projects to a conic in the image plane and if the location of the image of the absolute conic is known, we can that the camera is calibrated.
 
+## 2D Projective Transformation
 
-## Direct Linear Transformations
+Suppose a projective transformation $H$ that maps a point $x \in \mathbb{P}^2$ to the corresponding point $x’ \in \mathbb{P}^2$. How could we find the homography using points correspondences?
 
-To find the transformation $H$, whose degree of freedom is 8, one must find at least 4 point correspondences (each gives x-coordinate and y-coordinate correspondences). Suppose a point $x$ after transformation $H$ corresponds to $x’$. Since the points are in homogeneous coordinate, the scale cannot be determined but the direction of the points are the same. Note that $\mathbf{a} \times \mathbf{b} = 0$ if $\mathbf{b} = s\mathbf{a}$ where $\mathbf{a},\mathbf{b} \in \mathcal{R}^3$ and $c$ is a scaler. Thus, corresponding points $\mathbf{x}$ and $\mathbf{x}’$ must satisfy $\mathbf{x}’\times H\mathbf{x} = 0$. If we denote $j$ the row of the $H$ as $h_j^T$ then the equation can be written as the following.
+
+
+### Direct Linear Transformations
+
+To find the transformation $H$, whose degree of freedom is 8, one must find at least 4 point correspondences (each gives x-coordinate and y-coordinate correspondences). Suppose a point $x$ after transformation $H$ corresponds to $x’$. Since the points are in homogeneous coordinate, the scale cannot be determined but the direction of the points are the same. Note that $\mathbf{a} \times \mathbf{b} = 0$ if $\mathbf{b} = s\mathbf{a}$ where $\mathbf{a},\mathbf{b} \in \mathcal{R}^3$ and $c$ is a scaler. Thus, corresponding points $\mathbf{x}$ and $\mathbf{x}’$ must satisfy $\mathbf{x}’\times H\mathbf{x} = 0$ since a homography will give a vector $x’$ with the same direction but scaled by an unknowns non-zero factor. 
+
+If we denote $j$ the row of the $H$ as $h_j^T$ then the equation can be written as the following.
 
 $$
 \begin{align*}
@@ -337,4 +349,5 @@ $$
 
 Since the homography $H$ is known up to scale, we can set $\|h\|=1$. Then the solution will be the right singular vector corresponding to the smallest singular value. Lastly, we can arbitrarily set $h\_{ij} = 1$ and solve for the 8 unknowns. However if infact $h\_{ij}$ is close to zero, the solution can be unstable and is not recommended in general.
 
+The degenerate case where you have 4 correspondences but cannot retrieve the homography is when three points are collinear (lie on a line). 
 

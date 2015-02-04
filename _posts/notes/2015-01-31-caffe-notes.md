@@ -38,5 +38,17 @@ solver.prototxt
 
 train_val.prototxt
 
+## HDF5
+
+Strangely, for HDF5 data format, one should provide a textfile that contains a path to the HDF5 file.[^2]
+
+{% highlight bash %}
+hdf5_data_param {
+   source: “train.txt”
+   batch_size: 10
+}
+{% endhighlight %}
+
 
 [^1] http://caffe.berkeleyvision.org/gathered/examples/imagenet.html
+[^2] http://stackoverflow.com/questions/28031841/hdf5-diag-error-detected-in-hdf5-1-8-11

@@ -56,7 +56,7 @@ x.initialize(['mesh/2012-VW-beetle-turbo.3ds','mesh/Honda-Accord.3ds'],
 x.setViewpoint(azimuth, elevation, yaw, distance_ratio, field_of_view)
 rendering, depth = x.render()
 
-# Flip dimension
+# Swap dimensions
 rendering = rendering.transpose((2,1,0))
 depth = depth.transpose((1,0))
 
