@@ -129,6 +129,17 @@ Matrix norms and singular values have special relationships. In this post, I wou
 
 5. $ \lVert A \rVert\_\infty = \max_i \sum_j^n \lvert a_{ij} \rvert $
 
-    
+
+    The supremum occurs at the corner of the hypercube since infinity nomr of a vector is the absolute value of the largest element in it. Thus,
+    $$
+    \begin{align*}
+    \|A\|_\infty & = \max \frac{\|Ax\|_\infty}{\|x\|_\infty}\\
+    & = \max_{\|x_j\| = 1} \|Ax\|_\infty \\
+    & = \max_i \|a_i^T\|
+    $$
+
+    Where $a_i^T$ is the $i$ th row of the matrix $A$.
+
+
 [^1]: B. Recht, M. Fazel, P. A. Parrillo, *Guaranteed Minimum-Rank Solutions of Linear Matrix Equations via Nuclear Norm Minimization*, SIAM Review, Volume 52, Issue 3, pp. 471-501 (2010)
 [^2]: http://en.wikipedia.org/wiki/Schatten_norm

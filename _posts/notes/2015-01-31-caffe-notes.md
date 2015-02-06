@@ -50,5 +50,5 @@ hdf5_data_param {
 {% endhighlight %}
 
 
-[^1] http://caffe.berkeleyvision.org/gathered/examples/imagenet.html
-[^2] http://stackoverflow.com/questions/28031841/hdf5-diag-error-detected-in-hdf5-1-8-11
+[^1]: http://caffe.berkeleyvision.org/gathered/examples/imagenet.html
+[^2]: http://stackoverflow.com/questions/28031841/hdf5-diag-error-detected-in-hdf5-1-8-11

@@ -20,11 +20,11 @@ I’m TAing CS231A, Computer Vision in winter quarter, 2015. Studying lecture ma
 
 I’ll follow the notations on *Multiple View Geometry in Computer Vision* by Hartley and Zisserman.
 
-## Projective Geometry and Transformations of 2D
+## Projective Geometry and Transformations in 2D
 
 Many concepts in projective geometry can be easily understood in projective space $\mathbb{P}^2$. A generalization of the concepts can be applied to 3-space.
 
-One way to think of the $\mathbb{P}^2$ is to imagine a plane $x_3=1$ in $\mathbb{R}^3$. A ray $k(x_1, x_2, x_3)\; k \in \mathbb{R}$ uniquely intersects with the plane in a point whereas a plane in $\mathbb{R}^3$ intersects with the $x_3=1$ in a line.
+One way to think of $\mathbb{P}^2$ is to imagine a plane $x_3=1$ in $\mathbb{R}^3$. A ray $k(x_1, x_2, x_3)\; k \in \mathbb{R}$ uniquely intersects with the plane in a point whereas a plane in $\mathbb{R}^3$ intersects with $x_3=1$ in a line.
 
 ### Homogeneous representation of a line
 
@@ -34,9 +34,9 @@ The point, in this *homogeneous* coordinate is $\mathbf{x} = [x,y,1]^T$. Then a 
 
 ### Ideal Points and the Line at Infinity
 
-We defined homogeneous vectors where $x_3 \neq 0$. If we augment the space by adding vectors with $x_3 = 0$, the resulting space is called the projective space $\mathbb{P}^2$. The points with $x_3 = 0$ are ideal points and the line crosses all ideal points is the line at infinity $l\_\infty = (0,0,1)^T$. All lines parallel to $l = (a,b,c)^T$ pass the same ideal point $x = (b,-a,0)^T$ which is not true in the Euclidean geometry of $\mathbb{R}^2$.
+We defined homogeneous vectors where $x_3 \neq 0$. If we augment the space with vectors with $x_3$, the resulting space is called the projective space $\mathbb{P}^2$. All the points in $\mathbb{R}^2$ can be represented as $(a,b,1)$. The points with $x_3 = 0$ are ideal points and the line that crosses all ideal points is the line at infinity $l\_\infty = (0,0,1)^T$. All lines parallel to $l = (a,b,c)^T$ pass the same ideal point $x = (b,-a,0)^T$ which is not true in the Euclidean geometry of $\mathbb{R}^2$.
 
-One can picture that the line at infinity as the $x_1 x_2$ plane parallel to $x_3 = 0$.
+One can picture the line at infinity as a point in the $x_1 x_2$ plane parallel to $x_3 = 1$.
 
 ### Projective Transformation of Points and Lines
 
@@ -90,7 +90,7 @@ I = \left(\begin{array}{c}
 \end{array}\right)
 \;
 J = \left(\begin{array}{c}
-1\\i\\0
+1\\-i\\0
 \end{array}\right)
 $$
 
