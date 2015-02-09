@@ -114,13 +114,13 @@ $$
 \end{align*}
 $$
 
-Where $s$ is the stride (this is not standard convolution parameter). In standard convolution, the stride is 1. $$o$$ and $$r$$ are the number of strides it can make to make the computation plausible.
+Where $s$ is the stride (this is not standard convolution parameter). In standard convolution, the stride is 1. $$o$$ and $$r$$ are the number of strides it can make to make the indexing plausible.
 
 For parameters,
 
 $$
 \begin{align*}
-\frac{\partial Y_{nhw}}{\partial W_{cij}} & = \sum_{k = 0}^{r-1} \sum_{l = 0}^{o-1} X_{c,(i + ks),(j + ls)}\\
+\frac{\partial Y_{nhw}}{\partial W_{cij}} & = X_{n,(h + i),(w + j)}\\
 \frac{\partial Y_{nhw}}{\partial b} & = 1
 \end{align*}
 $$
@@ -138,7 +138,9 @@ Also for the weight update,
 
 $$
 \begin{align*}
-\frac{\partial E}{\partial W_{cij}} & = \sum_k \sum_l \frac{\partial E}{\partial Y_{nkl}} \frac{\partial Y_{nkl}}{\partial W_{cij}}\\
-& = \sum_k \sum_l \frac{\partial E}{\partial Y_{nkl}} \sum_{k = 0}^{r-1} \sum_{l = 0}^{o-1} X_{c,(i + ks),(j + ls)}\\
+\frac{\partial E}{\partial W_{cij}} & = \sum_p \sum_q \frac{\partial E}{\partial Y_{nij}} \frac{\partial Y_{nij}}{\partial W_{cij}}\\
+& = \sum_p \sum_q \frac{\partial E}{\partial Y_{npq}} \sum_{k = 0}^{r-1} \sum_{l = 0}^{o-1} X_{c,(i + ks),(j + ls)}\\
+\frac{\partial E}{\partial b} & = \sum_k \sum_l \frac{\partial E}{\partial Y_{nkl}} \frac{\partial Y_{nkl}}{\partial b}\\
+& = \sum_k \sum_l \frac{\partial E}{\partial Y_{nkl}}
 \end{align*}
 $$
