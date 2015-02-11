@@ -17,7 +17,7 @@ image:
 Extracting shape and motion from a video can be simply solved using various techniques. The most famous method is Tomasi-Kanade algorithm where you factorize a coordinate of feature points in a sequence of frame into shape and motion matrices. The idea is strikingly simple yet elegant.
 
 
-### Tomasi-Kanade Algorithm
+### Tomasi-Kanade Algorithm [^1]
 
 Suppose you have a $F$ frames of track of $P$ points. Each point being a $u,v$ pair indicating $x$ coordinate and $y$ coordinate respectively and $f$ be the frame index and $p$ be the point index $(u_f^p, v_f^p)$. Then we model the camera as an orthographic projection camera.
 
@@ -141,7 +141,7 @@ $$
 
 The $Q$ can be found by fitting data and the solution is unique up to a rotation.
 
-### Robust Factorization using Marques-Costeira Algorithm
+### Robust Factorization using Marques-Costeira Algorithm [^2]
 
 Degenerate case
 
@@ -150,4 +150,5 @@ Missing Data
 
 ### Reference
 
-[1] C. Tomasi, T. Kanade, <em>Shape and Motion from Image Streams under Orthography: a Factorization Method</em>, IJCV 1992
+[^1] C. Tomasi, T. Kanade, <em>Shape and Motion from Image Streams under Orthography: a Factorization Method</em>, IJCV 1992
+[^2]: M Marques, J Costeira, <em>Estimating 3D shape from degenerate sequences with missing data</em> Computer Vision and Image Understanding, 2009
