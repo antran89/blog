@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Tmux Notes"
-date: 2015-01-11T05:27:32-08:00
+date: 2015-02-12T19:42:04-0800
 modified:
 categories: notes
 comments: true
@@ -84,5 +84,20 @@ Or use the following to retrieve environment variables. [^2]
 set-option -ga update-environment ‘ YOUR_VAR’
 {% endhighlight %}
 
+## 256 color in tmux[^3]
+
+Set an environment variable `TERM` to `screen-256color`
+
+{% highlight bash %}
+export TERM=screen-256color
+{% endhighlight %}
+
+and in the `.tmux.conf`
+
+{% highlight bash %}
+set -g default-terminal “screen-256color”
+{% endhighlight %}
+
 [^1]: http://sourceforge.net/p/tmux/mailman/message/32267463/
 [^2]: http://stackoverflow.com/questions/8645053/how-do-i-start-tmux-with-my-current-environment
+[^3]: http://unix.stackexchange.com/questions/1045/getting-256-colors-to-work-in-tmux
