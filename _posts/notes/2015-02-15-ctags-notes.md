@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Ctags Notes"
-date: 22015-02-15T16:47:52-0800
+date: 2015-02-15T16:47:52-0800
 modified:
 categories: notes
 comments: true
@@ -17,7 +17,7 @@ Ctag command notes
 
 ## Cuda tags[^1]
 
-{% highlight %}
+{% highlight bash %}
 ctags -R --langmap=c++:+.cu *
 ctags -R --langmap=c++:+.cuh *
 {% endhighlight %}
