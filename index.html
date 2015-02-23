@@ -23,7 +23,7 @@ image:
     </div><!-- /.tile -->
   {% endfor %}
 {% else %}
-   {% for post in site.posts limit:10 %}  
+   {% for post in site.posts limit:40 %}  
      <div class="tile">
        <h2 class="post-title">
            <a href="{{ site.url }}{{ post.url }}">
@@ -35,14 +35,14 @@ image:
   {% endfor %}
 {% endif %}
 <!-- TODO
-  <div class="tile">
-    <h2 class="post-title">
-        <a href="{{ site.url }}{{ postlist }}">
-            {{post.title}}
-        </a>
-    </h2>
-    <p class="post-excerpt">{{ post.content | strip_html | truncatewords:20 }}</p>
-  </div><!-- /.tile -->
+    <div class="tile">
+      <h2 class="post-title">
+          <a href="{{ site.url }}{{ postlist }}">
+              {{post.title}}
+          </a>
+      </h2>
+      <p class="post-excerpt">{{ post.content | strip_html | truncatewords:20 }}</p>
+    </div><!-- /.tile -->
 </div><!-- /.tiles -->
 
 

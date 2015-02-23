@@ -20,6 +20,12 @@ image:
                		<h1>{{ post.title }}</h1>
                	</div>
                    {{ post.content }}
+                <hr/>
+			    <footer class="page-footer">
+			    	{% include page-author.html %}
+			    	{% include share-this.html %}
+			    	{% include page-meta.html %}
+			    </footer><!-- /.footer -->
               </div>
             {% endfor %}
             </div>

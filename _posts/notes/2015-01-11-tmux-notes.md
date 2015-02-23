@@ -4,9 +4,10 @@ title: "Tmux Notes"
 date: 2015-02-12T19:42:04-0800
 modified:
 categories: notes
-comments: true
 excerpt:
+comments: true
 tags: [tmux]
+toc: true
 ads: true
 image:
   feature:
@@ -55,13 +56,12 @@ tmux switch-client -t name
 
 ## Move Panes
 
-    <kbd>CTRL</kbd>+<kbd>b</kbd>, <kbd>{</kbd>          move the current pane to the previous position
-    <kbd>CTRL</kbd>+<kbd>b</kbd>, <kbd>}</kbd>          move the current pane to the next position
-    <kbd>CTRL</kbd>+<kbd>b</kbd>, <kbd>o</kbd>        rotate window "up" (i.e. move all panes)
-    <kbd>CTRL</kbd>+<kbd>b</kbd>, <kbd>M-o        rotate window "down"
-    <kbd>CTRL</kbd>+<kbd>b</kbd>  <kbd>!</kbd>          move the current pane into a new separate window (break pane)
-    <kbd>CTRL</kbd>+<kbd>b</kbd>C-a :move-pane -t :3.2
-                   split window 3's pane 2 and move the current pane there
+<kbd>CTRL</kbd>+<kbd>b</kbd>, <kbd>{</kbd>          move the current pane to the previous position
+<kbd>CTRL</kbd>+<kbd>b</kbd>, <kbd>}</kbd>          move the current pane to the next position
+<kbd>CTRL</kbd>+<kbd>b</kbd>, <kbd>o</kbd>          rotate window "up" (i.e. move all panes)
+<kbd>CTRL</kbd>+<kbd>b</kbd>, <kbd>M-o              rotate window "down"
+<kbd>CTRL</kbd>+<kbd>b</kbd>, <kbd>!</kbd>          move the current pane into a new separate window (break pane)
+<kbd>CTRL</kbd>+<kbd>b</kbd>, <kbd>:move-pane -t :3.2</kbd>    split window 3's pane 2 and move the current pane there
 
 ## Cannot Connect to X server within TMUX
 

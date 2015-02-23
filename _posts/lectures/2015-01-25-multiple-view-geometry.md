@@ -351,3 +351,7 @@ Since the homography $H$ is known up to scale, we can set $\|h\|=1$. Then the so
 
 The degenerate case where you have 4 correspondences but cannot retrieve the homography is when three points are collinear (lie on a line). 
 
+
+## The Fundamental Matrix F
+
+

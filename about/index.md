@@ -14,7 +14,7 @@ ads: false
 
 I am a <a target="_blank" href="http://www.stanford.edu/">Stanford</a> Ph.D. candidate working on Computer Vision, Machine Learning and Artificial Intelligence.
 
-I'm advised by <a href="http://cvgl.stanford.edu/silvio/"><b>Professor Silvio Savarese</b></a> in the <a href="http://cvgl.stanford.edu/"><b>Computational Vision and Geometry Lab</b></a> in the <a href="http://ai.stanford.edu"><b>Stanford AI Group</b></a>. Before joining Professor Savarese's group, I worked with <a href="http://www.stanford.edu/~boyd/"><b>Professor Steven Boyd</b></a> on the parallel inference on MRF using the <a href=”admm”>Alternating Direction Method of Multiplier (ADMM)</a> and <a href="http://geometry.stanford.edu"><b>Professor Leonidas Guibas</b></a> on shapes analysis using the Graph Laplacian.
+I'm advised by <a href="http://cvgl.stanford.edu/silvio/"><b>Professor Silvio Savarese</b></a> in the <a href="http://cvgl.stanford.edu/"><b>Computational Vision and Geometry Lab</b></a> in the <a href="http://ai.stanford.edu"><b>Stanford AI Group</b></a>. Before joining Professor Savarese's group, I worked with <a href="http://www.stanford.edu/~boyd/"><b>Professor Steven Boyd</b></a> on the parallel inference on MRF using the <a href="http://stanford.edu/~boyd/admm.html">Alternating Direction Method of Multiplier (ADMM)</a> and <a href="http://geometry.stanford.edu"><b>Professor Leonidas Guibas</b></a> on shapes analysis using the Graph Laplacian.
 
 Currently, I’m working as a teaching assistance for the Computer Vision class (CS231A) and made the class <a href="http://cs231a.stanford.edu/">website</a>.
 
