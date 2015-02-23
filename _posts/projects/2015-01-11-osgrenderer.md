@@ -11,7 +11,7 @@ tags: [OpenSceneGraph, Renderer]
 ads: true
 image:
   feature:
-  teaser:
+  teaser: rendering.png
 ---
 
 *Efficient object rendering engine for offscreen rendering using* [OpenSceneGraph 3](https://github.com/openscenegraph/osg)
@@ -128,7 +128,7 @@ renderer.delete(); clear renderer;
 
 Output 
 
-![](https://dl.dropboxusercontent.com/u/57360783/MatlabRenderer/rendering_with_depth.png)
+![]({{ site.url }}/images/rendering.png)
 
 
 Download

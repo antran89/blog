@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "FFT Convolution on GPU"
+title: "CUDA FFT Convolution on GPU"
 date: 2015-01-05T17:34:17-08:00
 modified: 2015-01-11T13:31:24-08:00
 categories: projects
@@ -13,4 +13,5 @@ image:
   teaser:
 ---
 
-https://github.com/chrischoy/MatlabCUDAConv
+Source code: 
+<https://github.com/chrischoy/MatlabCUDAConv>
