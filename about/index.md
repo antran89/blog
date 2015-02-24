@@ -20,7 +20,7 @@ Currently, I’m working as a teaching assistance for the Computer Vision class 
 
 In 2014 summer, I worked as the Student Organizer/Web-Master for the Bay Area Vision Meeting and made the <a href="http://cvgl.stanford.edu/BAVM14">website</a>. 
 
-Before coming to Stanford, I worked in the <a href="http://slsp.kaist.ac.kr/">Statistical Learning and Signal Processing Lab</a> in the <a href="www.kaist.ac.kr">Korea Advanced Institute of Science and Technology</a> as an undergraduate researcher when I was a senior. I worked on speech recognition using the Semi-Markov Model (an extension of a Hidden Markov Model that has edges going back to the distant past).
+Before coming to Stanford, I worked in the <a href="http://slsp.kaist.ac.kr/">Statistical Learning and Signal Processing Lab</a> in the <a href="www.kaist.ac.kr"><b>Korea Advanced Institute of Science and Technology(KAIST)</a></a> as an undergraduate researcher when I was a senior. I worked on speech recognition using the Semi-Markov Model (an extension of a Hidden Markov Model that has edges going back to the distant past).
 
 
 ## Research Interest
@@ -54,7 +54,7 @@ Courses taught at Stanford
 
 GPA : 4.02
 
-### Selected courses taken at the Korea Advanced Institute of Science and Technology
+### Selected courses taken at KAIST
 
 Graduated *Summa Cum Laude*
 
