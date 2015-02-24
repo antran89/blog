@@ -52,6 +52,8 @@ Courses taught at Stanford
 - The Fourier Transform and Its Applications (EE261)
 - Introduction to Linear Dynamical Systems (EE263)
 
+GPA : 4.02
+
 ### Selected courses taken at the Korea Advanced Institute of Science and Technology
 
 Graduated *Summa Cum Laude*
@@ -64,6 +66,8 @@ Graduated *Summa Cum Laude*
 - Calculus II
 - Data Structure
 - Linear Algebra
+
+GPA : 4.12/4.3
 
 ## Honors
 
