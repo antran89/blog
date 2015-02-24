@@ -10,7 +10,7 @@ tags: [FFT, CUDA, Convolution]
 ads: true
 image:
   feature:
-  teaser:
+  teaser: fftconv.png
 ---
 
 Source code: 

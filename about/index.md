@@ -34,14 +34,16 @@ Courses taught at Stanford
 
 ## Academic Background
 
-Selected courses taken at Stanford 
+### Selected courses taken at Stanford 
 
 - Convex Optimization I (EE364A)
+- Convex Optimization II (EE364B)
 - Machine Learning (CS229)
 - 3D Representation and Recognition (CS331B)
 - Mining Massive Data Sets (CS246)
 - Information Theory (EE376A)
 - Introduction to Statistical Signal Processing (EE278B)
+- Introduction to Stochastic Processes (STATS 217)
 - Stochastic Control (EE365)
 - Probabilistic Graphical Models: Principles and Techniques (CS228)
 - Interactive Computer Graphics (CS248)
@@ -69,4 +71,4 @@ Graduated *Summa Cum Laude*
 - Presidential Fellowship for Undergraduate Study
     - Full funding for undergraduate study
 - KAIST Alumni Chairman’s Award
-    - Awarede to top five highest achiever among 2013 graduates.
+    - Awarded to top five highest achiever among 2013 graduates
