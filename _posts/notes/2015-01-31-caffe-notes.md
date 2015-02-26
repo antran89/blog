@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "CNN Framework Caffe Notes"
-date: 2015-02-23T15:10:59-0800
+date: 2015-02-25T14:26:05-0800
 modified:
 categories: notes
 comments: true
@@ -57,7 +57,15 @@ Unrolled LSTM training available [^3]
 
 ## Pythonification of Caffe
 
-Pycaffe supports loading and learning parameters in ‘Python’!
+Pycaffe supports loading and learning parameters in ‘Python’![^4]
+
+{% highlight python %}
+pretrained_net = caffe.Net(
+   "net.prototxt", "net.caffemodel")
+solver = caffe.SGDSolver("solver.prototxt")
+solver.net.copy_from(pretrained_net)
+solver.solve()
+{% endhighlight %}
 
 ## Python Net Specification
 
@@ -70,14 +78,17 @@ Instead of using protocol buffer to define a network, a pull request produces a 
 
 New version of Caffe is available with the latest protobuf.
 
-blob_lr is replaced by lr_mult
+`blob_lr` is replaced by `lr_mult`
+
+{% highlight bash %}
 param { lr_mult: 1}
+{% endhighlight %}
 
 ## FreezeLayer
 
-New layer called FreezeLayer stops the layer modification. Good for fine-tuning a network.
-
+New layer called `FreezeLayer` stops the layer modification. Good for fine-tuning a network.
 
 [^1]: http://caffe.berkeleyvision.org/gathered/examples/imagenet.html
 [^2]: http://stackoverflow.com/questions/28031841/hdf5-diag-error-detected-in-hdf5-1-8-11
 [^3]: https://github.com/BVLC/caffe/pull/1873
+[^4]: http://vision.stanford.edu/teaching/cs231n/slides/evan.pdf
