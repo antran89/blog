@@ -51,7 +51,7 @@ hdf5_data_param {
 
 ## Caffe LSTM
 
-Unrolled LSTM training available [^3]
+Unrolled LSTM training available[^3]
 <https://github.com/jeffdonahue/caffe/tree/recurrent>
 
 

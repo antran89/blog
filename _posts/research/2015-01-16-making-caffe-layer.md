@@ -2,7 +2,7 @@
 layout: article
 title: "Making a Caffe Layer"
 except: ""
-date: 2015-01-16T19:49:25-0800
+date: 2015-02-26T15:18:12-0800
 modified:
 ads: true
 toc: true
@@ -14,7 +14,7 @@ comments: true
 mathjax : true
 ---
 
-Caffe is one of the most popular open-source neural network implementation [^1]. It is modular, clean and fast. To modify the network to my liking, I defined a layer that produces cosine and sine of radian inputs.
+Caffe is one of the most popular open-source neural network frameworks.[^1] It is modular, clean, and fast. To modify the network to my liking, I defined a layer that produces cosine and sine of radian inputs.
 
 
 ## Files to modify or create
@@ -30,7 +30,7 @@ Relative from the `$(CAFFE_HOME)`
 
 ## File 1: caffe.proto
 
-You have to give new index to your new layer. Look for `next available ID`. There are two lines containing the sentence. Increment the next available ID and define the new layer.
+You have to give a new index to your new layer. Look for `next available ID`. There are two lines containing the phrase. Increment the `next available ID` and define the new layer.
 
 ## File 2: layer_facctory.cpp
 
@@ -38,13 +38,11 @@ You have to add two lines that defines switch case of layers
 
 ## File 3: Layer Header
 
-Define your layer in the common layer header files.
-
-Use either common_layers.hpp or vision_layers.hpp depending on the type of the layer.
+Define your layer in a common layer header file. Use either `common_layers.hpp` or `vision_layers.hpp`, depending on the type of the layer.
 
 ## File 4 & 5 : Defining a layer
 
-The layer has to be a child of the `Layer` virtual class. The virtual functions that you have to implement are the ones defined as  `= 0` which are
+The layer has to inherit the `Layer` virtual class. The virtual functions that you have to implement are the ones defined as  `= 0` which are
 
 {% highlight cpp %}
 virtual void Reshape(const vector<Blob<Dtype>*>& bottom,
@@ -67,7 +65,7 @@ EXPECT_LE
 EXPECT_EQ
 {% endhighlight %}
 
-Finally, check Backprop using `GradientChecker`
+Finally, check Backprop using the `GradientChecker`.
 
 
 ## Compile and Test
@@ -82,17 +80,22 @@ make test
 
 ## Implementation Detail
 
+When you implement the functions, try to use the macros and functions provided by caffe to minimize your workload.
+
+
 * Blob offset
 
     When you compute the offset from the blob pointer, use the safe `offset(n,c)` function.
 
-* `caffe_[mul|add|sub|div|sqr|powx|exp|abs|sin|cos|copy|scal|cpu_axpby]`
+* Basic Math Functions
 
-    Basic elementwise functions and matrix multiplication jjprovided in `/caffe/util/math_functions.hpp`. 
+    `caffe_[mul|add|sub|div|sqr|powx|exp|abs|sin|cos|copy|scal|cpu_axpby]`
+
+    Basic elementwise functions and matrix multiplication are provided in `/caffe/util/math_functions.hpp`. 
 
 * CUDA Macros
 
-    There are several CUDA macros which come very handy when making `Forward_gpu` and `Backward_gpu`
+    There are several CUDA macros that come in very handy when implementing `Forward_gpu` and `Backward_gpu`
 
     {% highlight cuda %}
     // CUDA: grid stride looping
@@ -102,16 +105,15 @@ make test
            i += blockDim.x * gridDim.x)
     {% endhighlight %}
 
+{% comment %}
 * CUDA brief summary
 
-    I've been using CUDA for my research since CUDA 4.5 but the concept of grid, thread, blocks is sometimes confusing. Since caffe also requires cuda programming, I guess it's a great time to quickly summarize the concept of threads, blocks and grids and some basics.
+    I've been using CUDA for my research since CUDA 4.5, but the concepts of grids, threads, and blocks are sometimes confusing. Since caffe also requires CUDA programming, I will quickly summarize the concepts as well as the basics.
 
-    Each thread will be executed in parallel (in theory but stream processors can sometimes handle multiple threads)
+    In theory, each thread will be executed in parallel, but stream processors can sometimes handle multiple threads. In each block, there are multiple threads and a grid contains multiple blocks.
 
-
-    All CUDA kernels must starts with either `__device__` or `__global__`. `__device__` functions is only accessible from CUDA kernels. whereas `__global__` functions can be launched from CPU side.
-
-
+    All CUDA kernels must start with either `__device__` or `__global__`. `__device__` functions are only accessible from CUDA kernels, whereas `__global__` functions can be launched from the CPU side.
+{% endcomment %}
 
 ## Angle To Trigonometric Layer
 
