@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Markdown Cheatsheet"
+title: "Debugging CUDA + Mex in MATLAB"
 date: 2015-03-03T10:58:37-0800
 modified:
 categories: notes
