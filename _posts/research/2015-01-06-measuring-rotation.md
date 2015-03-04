@@ -4,7 +4,7 @@ title: "Measuring A Rotation"
 date: 2015-01-06T23:17:02-08:00
 modified: 2015-03-03T23:44:16-0800
 categories: research
-excerpt: "How do we measure a distance between rotations"
+excerpt:
 comments: true
 mathjax: true
 tags: [rotation, quaternion]

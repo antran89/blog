@@ -28,6 +28,10 @@ image:
 
 ## Jekyll
 
+- double curly braces vs percent sign
+
+    Output markup is delimited by double curly-braces, while tag markup is delimited by a the curly brace / percent sign duo.[^3]
+
 - Refering to a post in Jekyll[^1]
 
 {% highlight html %}
@@ -37,4 +41,5 @@ image:
 {% endhighlight %}
 
 [^1]: <http://jekyllrb.com/docs/templates/>
-[^1]: <http://sourceforge.net/p/jekyllc/bugs/markdown_syntax>
+[^2]: <http://sourceforge.net/p/jekyllc/bugs/markdown_syntax>
+[^3]: <http://code.tutsplus.com/articles/building-static-sites-with-jekyll--net-22211>
