@@ -136,6 +136,7 @@ Matrix norms and singular values have special relationships. In this post, I wou
     \|A\|_\infty & = \max \frac{\|Ax\|_\infty}{\|x\|_\infty}\\
     & = \max_{\|x_j\| = 1} \|Ax\|_\infty \\
     & = \max_i \|a_i^T\|
+    \end{align*}
     $$
 
     Where $a_i^T$ is the $i$ th row of the matrix $A$.
