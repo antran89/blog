@@ -105,15 +105,29 @@ When you implement the functions, try to use the macros and functions provided b
            i += blockDim.x * gridDim.x)
     {% endhighlight %}
 
-{% comment %}
-* CUDA brief summary
+## CUDA brief summary
 
+    Since the Caffe framework heavily relies on CUDA, I’ll briefly summarize the basics of CUDA.
+
+    - Function decorators
+
+        In CUDA terminology, device refers to a CUDA capable GPU and host refers to the CPU side.
+
+        There are two function decorators `__device__` and `__global__`. If you put either of them in front of a function, the function is compiled as a CUDA kernel. You can call a `__device__` kernel within a CUDA kernel whereas you can call a `__global__` kernel from the host.
+
+        A kernel function runs in parallel. There are two levels of parallelism : threads and blocks. Blocks consists of multiple threads and a collection of blocks is called as a grid. However, threads are divide into groups of 32 threads called wraps and it is best to use multiple of 32 threads. 
+
+        You can specify the number of execution blocks that you will run from CPU side when you launch a kernel. For example, if you want to lanch a kernel called `kernel_function`, simply put the following on the CPU side code. `kernel_function<<<N_BLOCKS, N_THREADS>>>(arguments)`. This will launch `N_BLOCKS` of blocks with `N_THREADS` number of threads. [^2]
+
+{% comment %}
+        There aare two 
     I've been using CUDA for my research since CUDA 4.5, but the concepts of grids, threads, and blocks are sometimes confusing. Since caffe also requires CUDA programming, I will quickly summarize the concepts as well as the basics.
 
     In theory, each thread will be executed in parallel, but stream processors can sometimes handle multiple threads. In each block, there are multiple threads and a grid contains multiple blocks.
 
     All CUDA kernels must start with either `__device__` or `__global__`. `__device__` functions are only accessible from CUDA kernels, whereas `__global__` functions can be launched from the CPU side.
 {% endcomment %}
+
 
 ## Angle To Trigonometric Layer
 
@@ -149,9 +163,9 @@ namespace caffe {
 template <typename Dtype>
 void AngleToTrigLayer<Dtype>::Reshape(
   const vector<Blob<Dtype>*>& bottom, vector<Blob<Dtype>*>* top) {
-  // Takes arbitrary number of angles in radian and return sin and cos of the
-  // angles. sines and cosines will be concatenated
-  // [sin_1, sin_2, ..., sin_n, cos_1, cos_2, ...,cos_n]
+  // Takes arbitrary number of angles in radian and returns sin and cos of the
+  // inputs. The cosines will be append at the end of sines.
+  // i.e. [sin_1, sin_2, ..., sin_n, cos_1, cos_2, ...,cos_n]
   CHECK_EQ(bottom[0]->height(), 1);
   CHECK_EQ(bottom[0]->width(), 1);
   // num, channels, height, width,
@@ -217,8 +231,8 @@ namespace caffe {
 
 
 /* Define automatic type switching cuda sin,cos functions
- * [sin|cos]f is single precision trigonometric functions
- * [sin|cos] is double precision trigonometric functions
+ * [sin,cos]f are single precision trigonometric functions
+ * [sin,cos] are double precision trigonometric functions
  */
 template <typename Dtype>
 Dtype auto_type_cos(Dtype x);
@@ -302,4 +316,4 @@ INSTANTIATE_CLASS(AngleToTrigLayer);
 {% endhighlight %}
 
 [^1]: <http://caffe.berkeleyvision.org>
-
+[^2]: <http://www.nvidia.com/docs/IO/116711/sc11-cuda-c-basics.pdf>

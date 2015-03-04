@@ -13,7 +13,7 @@ image:
   teaser:
 ---
 
-I use CUDA to speed up many standard computations. In my last CVPR submission, I implemented the Conjugate Gradient method and convolution in CUDA. To further speed up my fast prototyping, I use *python* or *Matlab*. 
+I use CUDA to speed up many standard computations. In my last CVPR submission, I implemented the Conjugate Gradient method and convolution in CUDA. To further speed up my fast prototyping, I use *python* or *Matlab* as a wrapper.
 
 In this post, I will explain about how to debug CUDA binaries with MATLAB binding.
 

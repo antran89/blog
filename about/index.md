@@ -29,6 +29,10 @@ Before coming to Stanford, I worked in the <a href="http://slsp.kaist.ac.kr/">St
 - Machine Learning & Artificial Intelligence
 - Distributed Optimization
 
+## Publications
+
+- **Christopher B. Choy**, Michael Stark, Sam Corbett-Davies, Silvio Savarese, *Enrich Object Detection with 2D-3D Registration and Continuous Viewpoint Estimation*, CVPR 2015.
+
 ## Teaching Experience
 
 Courses taught at Stanford
