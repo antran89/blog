@@ -37,4 +37,4 @@ image:
 {% endhighlight %}
 
 [^1]: <http://jekyllrb.com/docs/templates/>
-[^1]: http://sourceforge.net/p/jekyllc/bugs/markdown_syntax
+[^1]: <http://sourceforge.net/p/jekyllc/bugs/markdown_syntax>

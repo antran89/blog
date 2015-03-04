@@ -21,7 +21,7 @@ First let’s compile your CUDA + Mex file. I made a simple MATLAB code that com
 
 {% gist d293a10b99940e9db729 %}
 
-The compilation source code is part of my [Matlab Cuda Convolution](https://github.com/chrischoy/MatlabCUDAConv/) and you can see the compilation code in action at <https://github.com/chrischoy/MatlabCUDAConv>.
+The compilation source code is a part of my [Matlab Cuda Convolution](https://github.com/chrischoy/MatlabCUDAConv/) and you can see the compilation code in action at <https://github.com/chrischoy/MatlabCUDAConv>.
 
 To debug, you can either use the last argument to be `true`. It will add the debug option `-g -G`.
 
