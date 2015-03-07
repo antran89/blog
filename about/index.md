@@ -2,7 +2,7 @@
 layout: article
 title: "About"
 date: 2014-06-02T09:44:20-08:00
-modified: 2015-01-06T14:56:44-08:00
+modified: 2015-03-06T17:39:31-0800
 excerpt: "About me"
 image:
   feature:
@@ -29,15 +29,14 @@ Before coming to Stanford, I worked in the <a href="http://slsp.kaist.ac.kr/">St
 - Machine Learning & Artificial Intelligence
 - Distributed Optimization
 
-## Publications
-
-- **Christopher B. Choy**, Michael Stark, Sam Corbett-Davies, Silvio Savarese, *Enrich Object Detection with 2D-3D Registration and Continuous Viewpoint Estimation*, CVPR 2015.
-
 ## Teaching Experience
 
 Courses taught at Stanford
 
 - Computer Vision (CS231A), (Teaching Assistant)
+    - Website <http://cs231a.stanford.edu>
+    - <a href="{% post_url /research/2015-03-04-cs231a-review-session %}">review slides</a>
+    - <a href="http://chrischoy.github.io/blog/research/multiple-view-geometry/">multiple view geometry summary</a>
 
 ## Academic Background
 

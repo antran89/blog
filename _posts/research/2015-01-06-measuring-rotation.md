@@ -1,8 +1,8 @@
 ---
 layout: article
-title: "Measuring A Rotation"
+title: "Measuring a Rotation"
 date: 2015-01-06T23:17:02-08:00
-modified: 2015-03-03T23:44:16-0800
+modified: 2015-03-05T14:45:39-0800
 categories: research
 excerpt:
 comments: true
@@ -14,11 +14,11 @@ image:
   teaser:
 ---
 
-Measuring the distance between two viewpoints can be ambiguous. If we want to azimuth and elevation only, we can uniquely identify a viewpoint as a point on a sphere. Measuring distance between two viewpoint in this case can be geometrically interpreted as a geodesic distance between two points on the unit sphere. The geodesic distance is the radian angle between two view points. This measure assumes the up-direction and cannot represent in-plane rotation.
+Measuring the distance between two viewpoints can be ambiguous. If we want to measure azimuth and elevation only, we can uniquely identify a viewpoint as a point on a unit sphere. Measuring distance between two viewpoints in this case can be geometrically interpreted as a geodesic distance between two points on the unit sphere. The geodesic distance is the radian angle between two viewpoints. This measure assumes the up-direction and cannot represent in-plane rotation.
 
-Alternatively, one can use the Euler angles : yaw, pitch and roll, or in other terms $\phi, \theta, \psi$. These three angles represent full 3D rotation but measuring the distance between two rotations is not defined.
+Alternatively, one can use the Euler angles: yaw, pitch, and roll, or in other words, $\phi, \theta, \psi$. These three angles represent full 3D rotation, but measuring the distance between two rotations is not defined.
 
-One of the most classic ways to measure distance is the measure an angle between two quaternions. For $q_i, q_j$ , unit quaternions,
+One of the most classic ways to measure distance is to measure an angle between two quaternions $q_i, q_j$, unit quaternions,
 
 $$
 \theta = \cos^{-1}\left( 2 \langle q_i, q_j \rangle^2 - 1 \right)
@@ -47,19 +47,19 @@ The quaternion has long been used in gaming and graphics for nice spherical line
 
 {:/comment}
 
-Finally, using a logarithm of a matrix to compute a rotation. For instance let $R_i, R_j \in \mathcal{R}^{3 \times 3}$ be two rotation matrices that we want to measure a similarity or a distance between them. Since these are rotations, natural thing to do is to measure an angle (3D) between these rotations.
+Finally, we can use a logarithm of a matrix to compute a rotation. For instance let $R_i, R_j \in \mathcal{R}^{3 \times 3}$ be two rotation matrices between which we want to measure a distance. Since these are rotations, the natural thing to do is to measure an angle (3D) between these rotations.
 
 $$
 d_g(R_i, R_j) = \theta
 $$
 
-Let’s analyze some properties of a rotation matrix. First, a rotation matrix is orthogonal $R^{-1} = R^T$. Second, an exponential of a skew-symmetric matrix is always a rotation matrix!. The Rodrigues’ rotation formula uses the fact and Lie algebra group $so(3)$ to represent a rotation using the exponential of a matrix.
+Let’s analyze some properties of a rotation matrix. First, a rotation matrix is orthogonal $R^{-1} = R^T$. Second, an exponential of a skew-symmetric matrix is always a rotation matrix! Rodrigues’s rotation formula uses this fact and the Lie algebra group $so(3)$ to represent a rotation using the exponential of a matrix.
 
 $$
 R = \exp \left( \theta (\mathbf{u} \cdot \mathbf{L} )  \right)
 $$
 
-Where $u$ is the rotation axis and $\theta$ is the angle of rotation. The $L$ be the Lie group basis in $so(3)$ (three Hermitian matrices).
+where $u$ is the rotation axis and $\theta$ is the angle of rotation. The $L$ is the Lie group basis in $so(3)$ (three Hermitian matrices).
 
 Thus rotation from $R_i$ to $R_j$ is $R_i^T R_j$. The angle between two rotations is
 
@@ -70,8 +70,7 @@ $$
 \end{align*}
 $$
 
-Where we used the fact that a Frobenius norm of a matrix is equal to an L2 norm of singular values [(Interesting properties of matrix norms)]({% post_url /research/2015-01-13-matrix-norms %}).
-
-Thus using a logarithm of a matrix, we can extrac the angle of rotation. [^1]
+where we used the fact that a Frobenius norm of a matrix is equal to an L2 norm of singular values[^2]. Thus using a logarithm of a matrix, we can extract the angle of rotation. [^1]
 
 [^1]: http://en.wikipedia.org/wiki/Axis–angle_representation
+[^2]: {% post_url /research/2015-01-13-matrix-norms %}

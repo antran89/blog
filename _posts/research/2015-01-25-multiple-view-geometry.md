@@ -3,7 +3,7 @@ layout: article
 title: "Multiple View Geometry Summary"
 date: 2015-02-01T04:25:39-0800
 modified:
-categories: lectures
+categories: research
 excerpt:
 comments: true
 mathjax: true

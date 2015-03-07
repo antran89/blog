@@ -88,6 +88,10 @@ param { lr_mult: 1}
 
 New layer called `FreezeLayer` stops the layer modification. Good for fine-tuning a network.
 
+## Caffe Validation
+
+When you are using the `test_iter`, make sure that the number of iterations and the batch size matches the number of test images.
+
 [^1]: http://caffe.berkeleyvision.org/gathered/examples/imagenet.html
 [^2]: http://stackoverflow.com/questions/28031841/hdf5-diag-error-detected-in-hdf5-1-8-11
 [^3]: https://github.com/BVLC/caffe/pull/1873
