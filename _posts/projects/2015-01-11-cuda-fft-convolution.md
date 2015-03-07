@@ -35,4 +35,6 @@ Thus, for a larger filter $g$, the convolution using FFT would asymptotically ru
 
 For my CVPR 15 paper, [**Enrich Object Detection with 2D-3D Registration and Continuous Viewpoint Estimation**]({{ post_url /projects/2015-03-02-enrich-object-detection }}), I made a CUDA FFT convolution package to speed up the convolution.
 
+## Source code
+
 You can download the source code from <https://github.com/chrischoy/MatlabCUDAConv>

@@ -40,6 +40,8 @@ Finding the right CAD model that fits an object in an image is essentially discr
 
 ## Poster
 
+<img src="{{site.url}}/external/gplvm_occlusion_robust/poster.png">
+
 <a href="{{site.url}}/external/gplvm_occlusion_robust/occlusion_robust_pose_model_estimation_using_GPLVM_poster.pdf">poster</a>
 
 ## Slides
