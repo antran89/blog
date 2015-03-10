@@ -10,13 +10,13 @@
   excerpt: "Notes"
   image: 400x250.gif
 
-- title: Articles
-  url: /articles/
-  excerpt: "Blog Posts"
-  image: 400x250.gif
+#- title: Articles
+#  url: /articles/
+#  excerpt: "Blog Posts"
+#  image: 400x250.gif
 
 - title: Projects
-  url: /project/
+  url: /projects/
   excerpt: "Projects"
   image: 400x250.gif
 
@@ -27,5 +27,5 @@
 
 - title: About
   url: /about/
-  excerpt: "About myself"
+  excerpt: "About me"
   image: 400x250.gif
