@@ -22,6 +22,10 @@ In 2014 summer, I worked as the Student Organizer/Web-Master for the Bay Area Vi
 
 Before coming to Stanford, I worked in the <a href="http://slsp.kaist.ac.kr/">Statistical Learning and Signal Processing Lab</a> in the <a href="www.kaist.ac.kr"><b>Korea Advanced Institute of Science and Technology(KAIST)</b></a> as an undergraduate researcher when I was a senior. I worked on speech recognition using the Semi-Markov Model (an extension of a Hidden Markov Model that has edges going back to the distant past).
 
+## Contact
+
+- Email: chrischoy at stanford dot edu
+- Address: Office 128, 353 Serra Mall, Gates Building, Stanford, CA 94305 
 
 ## Research Interest
 

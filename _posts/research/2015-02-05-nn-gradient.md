@@ -15,17 +15,13 @@ image:
   teaser:
 ---
 
-Computing neural network gradient requires very simple calculus yet can be hairsplitting.
+Computing the neural network gradient requires very simple calculus, yet can be tedious.
 
 ## Affine Transformation (Fully Connected Layer) Gradients
 
-Simple fully connected neural network with batch size $n$ and the feature dimension $d_i$ and output feature dimension is $d_o$ or $d_i$ neurons as an input and $d_o$ neurons as outputs. The weight $W \in \mathbb{R}^{d_o \times d_i}$ and $b \in \mathbb{R}^{d_o}$. The resulting response $Y \in \mathbb{R}^{d_o \times n}$
+For a simple fully connected layer with batch size $n$ with the feature dimension $d_i$ and output feature dimension is $d_o$ ($d_i$ neurons as an inputs and $d_o$ neurons as output), the layer has $W \in \mathbb{R}^{d_o \times d_i}$ and $b \in \mathbb{R}^{d_o}$ as parameters. The resulting response $Y \in \mathbb{R}^{d_o \times n}$ is $Y = AX + b$.
 
-$$
-Y = AX + b
-$$
-
-The summation is a broadcasting sum that makes the summation consistent.
+The summation is a broadcasting sum.
 
 The gradient $\frac{\partial Y\_{ij}}{\partial W\_{pq}}$ can be computed as
 
@@ -36,7 +32,7 @@ $$
 \end{align*}
 $$
 
-also the gradient for the scaler $b$ is 
+Also the gradient for the scaler $b$ is 
 
 $$
 \begin{align*}
@@ -45,7 +41,7 @@ $$
 \end{align*}
 $$
 
-where $\delta_{ij} = 1$ if $i = j$ otherwise $0$.
+where $\delta_{ij}$ is a kronecker delta $\delta_{ij} = 1$ if $i = j$, otherwise $0$.
 
 $$
 \begin{align*}
@@ -70,7 +66,7 @@ $$
 \end{align*}
 $$
 
-where $Y_i$ is the $i$ the datapoint in the batch.
+where $Y_i$ is the $i$ th datapoint in the batch.
 The gradient propagated back to the lower layer is
 
 $$
@@ -80,11 +76,11 @@ $$
 \end{align*}
 $$
 
-The only thing that you have to be careful is to match the dimension of the matrices. Everything will work out if you just match the dimensions of matrices that you multiply.
+The only thing that you have to be careful with is matching the dimension of the matrices. Everything will work out if you just match the dimensions of matrices that you multiply. For instance, the dimension of $W$ and TODO
 
 ## ReLU Gradients
 
-Rectified Linear Unit (ReLU) has been widely used for simplicity and faster convergence. The ReLU allows stronger gradients to propagate back to the lower layers unlike sigmoid units or hyperbolic tangent units. Since there is no weights to learn, we can just compute the gradients $\frac{\partial E}{\partial X}$. where $Y = f(X)$ and the $f(\cdot)$ is the element-wise ReLU.
+The Rectified Linear Unit (ReLU) has been widely used for simplicity and faster convergence. The ReLU units allow stronger gradients to propagate back to the lower layers, unlike sigmoid units or hyperbolic tangent units. Since there is no weight to learn, we can just compute the gradients $\frac{\partial E}{\partial X}$, where $Y = f(X)$ and the $f(\cdot)$ is the element-wise ReLU.
 
 $$
 \begin{align*}
@@ -97,7 +93,7 @@ where $\circ$ is the Hadammard product and $\Delta(X)$ has elements $\delta\_{ij
 
 ## Generalized Convolution Gradients
 
-The convolution is a conventional signal filtering technique. In here, you can also think of it as 2D or ND filter that extract edges, blobs, or high frequency changes. In this example, we follow the *caffe* *Blob* convention and compute 2D convolution.
+The convolution is a conventional signal filtering technique. In CNN terminology, you can also think of it as 2D or ND filter that extract edges, blobs, or high frequency changes. In this example, we follow the *caffe* *Blob* convention and compute 2D convolution.
 
 Unlike traditional signal processing convolution, neural network *convolution* is a generalization of convolution $$\ast$$. For instance, there is the *stride* which controls the step size, and you can think of the standard convolution as a convolution with the stride 1. Also the output convolution size is not $n + k - 1$ where $n$ is the input signal size and $k$ is the kernel size. The neural network convolution kernel always fits within the input size. Thus the output size is $n - k + 1$.
 
