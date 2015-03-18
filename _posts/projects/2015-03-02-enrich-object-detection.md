@@ -63,10 +63,11 @@ For more results, please visit,
 
 ## Codes
 
-My research code is available at
-Github : <http://github.com/chrischoy/EnrichObjectDetectionResearchCode>
+If you feel really brave, you can try my un-refactored codes are available at
+Github : <http://github.com/chrischoy/EnrichObjectDetection2>
 
-The refactored code will soon be available at
+
+The refactored codes will soon be available at
 Github : <http://github.com/chrischoy/EnrichObjectDetection>
 
 ## Dependencies
