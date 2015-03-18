@@ -37,4 +37,4 @@ For my CVPR 15 paper, [**Enrich Object Detection with 2D-3D Registration and Con
 
 ## Source code
 
-You can download the source code from <https://github.com/chrischoy/MatlabCUDAConv>
+You can download the source code from <https://github.com/chrischoy/CUDA-FFT-Convolution>

@@ -2,7 +2,7 @@
 layout: article
 title: "Enrich Object Detection (CVPR15)"
 date: 2015-03-03T22:54:05-0800
-modified:
+modified: 2015-03-17T22:40:48-0700
 categories: projects
 excerpt:
 comments: true
@@ -26,8 +26,50 @@ We propose an efficient method for synthesizing templates from 3D models that ru
 
 ## Results
 
-TODO
+The algorithm can work as a standalone object detector or as a post-processing stage to enrich existing detection bounding boxes.
+
+### Enrich Object Detection
+
+<figure class="half">
+	<img src="https://raw.githubusercontent.com/chrischoy/EnrichObjectDetectionResults/master/car_val_cnn/PASCAL12_car_val_init_0_car_each_27_lim_250_lam_0.150_a_48_e_4_y_1_f_1_scale_1.00_sbin_6_level_20_skp_n_sm_dvpv_server_104_tmp_3_prop_cnn_tuning_nv_8_img_15_dwot_obj_2.jpg">
+	<img src="https://raw.githubusercontent.com/chrischoy/EnrichObjectDetectionResults/master/aeroplane_val_cnn/PASCAL12_aeroplane_val_init_0_aeroplane_each_7_lim_250_lam_0.150_a_24_e_5_y_5_f_1_scale_1.00_sbin_6_level_20_skp_n_sm_dvpv_server_capri7_tmp_1_prop_cnn_tuning_nv_8_img_201_dwot_obj_1.jpg">
+	<figcaption>PASCAL 2012 dataset viewpoint estimation results. The blue bounding box indicates the detection results from R-CNN and purple box indicates the results from our system with 3D CAD model prediction overlaid (viewpoint, closest CAD model, focal length). The system is robust to input bounding box localization.</figcaption>
+</figure>
+
+### Standalone Object Detector
+
+<figure>
+	<img src="https://raw.githubusercontent.com/chrischoy/EnrichObjectDetectionResults/master/car_pascal12_det/PASCAL_car_val_init_0_Car_each_27_lim_250_lam_0.150_a_24_e_3_y_1_f_1_scale_2.00_sbin_6_level_15_skp_n_server_101_tmp_2_img_85.jpg">
+	<figcaption>PASCAL12 dataset car detection and viewpoint estimation result. From the top left, the original image, true positive overlay, true positive detections with bounding boxes, top five false positive detections with bounding boxes. The score on the top of the bounding box indicates the confidence of detection.</figcaption>
+</figure>
+<figure>
+	<img src="{{ site.url }}/images/research/eod_car.png">
+	<figcaption>3D Object dataset detection and viewpoint estimation results. From the left, the original image, true positive detection, top two false positive detections. The score on the top of the bounding box indicates the confidence of detection.</figcaption>
+</figure>
+
+For more results, please visit,
+
+- PASCAL 2012, Aeroplane
+    <https://github.com/chrischoy/EnrichObjectDetectionResults/tree/master/aeroplane_val_cnn>
+
+- PASCAL 2012, Car
+    <https://github.com/chrischoy/EnrichObjectDetectionResults/tree/master/car_val_cnn>
+
+- Object 3D, Bicycle
+    <https://github.com/chrischoy/EnrichObjectDetectionResults/tree/master/bicycle_3dobject>
+
+- Object 3D, Car
+    <https://github.com/chrischoy/EnrichObjectDetectionResults/tree/master/car_3dobject>
 
 ## Codes
 
-TODO
+My research code is available at
+Github : <http://github.com/chrischoy/EnrichObjectDetectionResearchCode>
+
+The refactored code will soon be available at
+Github : <http://github.com/chrischoy/EnrichObjectDetection>
+
+## Dependencies
+
+- OSGRenderer: <http://github.com/chrischoy/OSGRenderer>
+- CUDA-FFT-Convolution: <http://github.com/chrischoy/CUDA-FFT-Convolution>
