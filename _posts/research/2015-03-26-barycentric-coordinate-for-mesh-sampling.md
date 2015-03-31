@@ -15,23 +15,27 @@ image:
   teaser:
 ---
 
-To convert a mesh into a point cloud, one has to sample points that can uniformly cover the surface. To do so, one must choose the number of samples proportional to the area of a face(polygon).
+To convert a mesh into a point cloud, one has to sample points that can
+uniformly cover the surface. To do so, one must choose the number of samples
+proportional to the area of a face(polygon).
 
 First, we iterate through
-all polygons, splitting them into triangles as necessary. Then, for each
-triangle, we compute its area and store it in an array along with the
-cumulative area of triangles visited so far. Next, we select a triangle with
+all polygons, splitting them into triangles since measuring area of a triangle
+is much easier than computing the area of a polygon. Then, for each triangle,
+we compute its area and store it in an array along with the cumulative area of
+triangles visited so far. Next, we select a triangle with
 probability proportional to its area by generating a random number between 0
-and the total cumulative area and performing a binary search on the array of
-cumulative areas. For each selected triangle with vertices (A, B,C), we
-construct a point on its surface by generating two random numbers, r1 and r2,
-between 0 and 1, and evaluating the following equation:
+and the total cumulative area. Then, for each selected triangle (let’s denote
+the vertices as $A, B, C$ ), we sample a point on its surface by generating
+two random numbers, $r_1$ and $r_2$ between 0 and 1, and compute the coordinate using the equation on the section <a href="#">sample using the Barycentric coordinate system</a>
 
 ## Compute Area of Faces
 
-First, you have to convert all polygons into triangles. You can easily do this in many commercial mesh converters.
+First, you have to convert all polygons into triangles. You can easily do this
+in many commercial mesh converters.
 
-For 3D vertices $\mathbf{a}, \mathbf{b}$ and $\mathbf{c}$, the area of the triangle formed by the three vectors is
+For 3D vertices $\mathbf{a}, \mathbf{b}$ and $\mathbf{c}$, the area of the
+triangle formed by the three vectors is
 
 $$
 \frac12 \| (\mathbf{a} - \mathbf{c}) \times (\mathbf{b} - \mathbf{c}) \|_2
@@ -39,11 +43,11 @@ $$
 
 ## Set number of samples for each face
 
-Just sum all the triangle area and convert into a probability distribution.
-If you multiply the number of points you want to sample to the distribution you will get the number of samples per face.
+Just sum up all the triangle areas and convert them into a probability distribution.
+If you multiply the number of points you want to sample to the distribution, you will get the number of samples per face.
 
 
-## Sample using Barycentric Coordinate
+## Sample using the Barycentric coordinate
 
 For two random variables $r_1, r_2$ uniformly distributed from 0 to 1,
 

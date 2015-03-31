@@ -2,7 +2,7 @@
 layout: article
 title: "About"
 date: 2014-06-02T09:44:20-08:00
-modified: 2015-03-06T17:39:31-0800
+modified: 2015-03-30T11:56:36-0700
 excerpt: "About me"
 image:
   feature:
@@ -12,7 +12,7 @@ share: false
 ads: false
 ---
 
-I am a <a target="_blank" href="http://www.stanford.edu/">Stanford</a> Ph.D. candidate working on Computer Vision, Machine Learning and Artificial Intelligence.
+Hello, I’m <b>Christopher Bongsoo Choy</b>. I’m pursuing Ph.D. at <a target="_blank" href="http://www.stanford.edu/">Stanford University</a> and interested in Computer Vision, Machine Learning and Artificial Intelligence.
 
 I'm advised by <a href="http://cvgl.stanford.edu/silvio/"><b>Professor Silvio Savarese</b></a> in the <a href="http://cvgl.stanford.edu/"><b>Computational Vision and Geometry Lab</b></a> in the <a href="http://ai.stanford.edu"><b>Stanford AI Group</b></a>. Before joining Professor Savarese's group, I worked with <a href="http://www.stanford.edu/~boyd/"><b>Professor Steven Boyd</b></a> on the parallel inference on MRF using the <a href="http://stanford.edu/~boyd/admm.html">Alternating Direction Method of Multiplier (ADMM)</a> and <a href="http://geometry.stanford.edu"><b>Professor Leonidas Guibas</b></a> on shapes analysis using the Graph Laplacian.
 
@@ -56,7 +56,7 @@ Courses taught at Stanford
 - Introduction to Stochastic Processes (STATS 217)
 - Stochastic Control (EE365)
 - Probabilistic Graphical Models: Principles and Techniques (CS228)
-- Interactive Computer Graphics (CS248)
+- Interactive Computer Graphics (CS248) <a href="http://chrischoy.github.io/blog/lectures/cs248-interactive-graphics/">OpenGL samples</a>
 - Computer Vision: From 3D Reconstruction to Recognition (CS231A)
 - Design and Analysis of Algorithms (CS161)
 - The Fourier Transform and Its Applications (EE261)
