@@ -39,7 +39,7 @@ Courses taught at Stanford
 
 - Computer Vision (CS231A), (Teaching Assistant)
     - Website <http://cs231a.stanford.edu>
-    - <a href="{% post_url /research/2015-03-04-cs231a-review-session %}">review slides</a>
+    - <a href="http://chrischoy.github.io/blog/research/cs231a-review-session/">review slides</a>
     - <a href="http://chrischoy.github.io/blog/research/multiple-view-geometry/">multiple view geometry summary</a>
 
 ## Academic Background
@@ -50,6 +50,7 @@ Courses taught at Stanford
 - Convex Optimization II (EE364B)
 - Machine Learning (CS229)
 - 3D Representation and Recognition (CS331B)
+- Convolutional Neural Networks for Visual Recognition (CS231N)
 - Mining Massive Data Sets (CS246)
 - Information Theory (EE376A)
 - Introduction to Statistical Signal Processing (EE278B)
@@ -62,7 +63,7 @@ Courses taught at Stanford
 - The Fourier Transform and Its Applications (EE261)
 - Introduction to Linear Dynamical Systems (EE263)
 
-GPA : 4.02
+GPA : 4.03
 
 ### Selected courses taken at KAIST
 

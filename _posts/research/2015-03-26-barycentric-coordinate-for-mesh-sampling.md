@@ -17,49 +17,58 @@ image:
 
 To convert a mesh into a point cloud, one has to sample points that can
 uniformly cover the surface. To do so, one must choose the number of samples
-proportional to the area of a face(polygon).
+proportional to the area of a face (polygon).
 
 First, we iterate through
-all polygons, splitting them into triangles since measuring area of a triangle
+all polygons, splitting them into triangles since measuring the area of a triangle
 is much easier than computing the area of a polygon. Then, for each triangle,
-we compute its area and store it in an array along with the cumulative area of
-triangles visited so far. Next, we select a triangle with
-probability proportional to its area by generating a random number between 0
-and the total cumulative area. Then, for each selected triangle (let’s denote
-the vertices as $A, B, C$ ), we sample a point on its surface by generating
-two random numbers, $r_1$ and $r_2$ between 0 and 1, and compute the coordinate using the equation on the section <a href="#">sample using the Barycentric coordinate system</a>
+we compute its area and store it in an array. Next, we select a triangle with
+probability proportional to its area. 
 
-## Compute Area of Faces
+Sampling uniformly on a triangle requires a trick: Barycentric coordinate
+system.
+
+## Barycentric Coordinate System
+
+The Barycentric coordinate is a way to define a point on a $n$
+dimensional simplex using $n$ coordinates. You define $n$ weights $[a_1 ,...,
+a_n]$ to denote a point $p= a_1 \mathbf{x}_1 + \cdots + a_n \mathbf{x}_n$.
+It is just a convex hull of the simplex.
+
+Then, for each selected triangle (let’s denote the vertices of the triangle as
+$A, B, C$ ), we sample a point on its surface by generating two random numbers,
+$r_1$ and $r_2$ between 0 and 1, and compute the coordinate using the equation
+on the next section.
+
+## Computing the Area of Faces
 
 First, you have to convert all polygons into triangles. You can easily do this
 in many commercial mesh converters.
 
-For 3D vertices $\mathbf{a}, \mathbf{b}$ and $\mathbf{c}$, the area of the
-triangle formed by the three vectors is
+Let the vertices of a triangle $A, B, C$ in 3D coorindate as $\mathbf{a},
+\mathbf{b}$ and $\mathbf{c}$. Then, the area of the triangle formed by the
+three vectors is
 
 $$
 \frac12 \| (\mathbf{a} - \mathbf{c}) \times (\mathbf{b} - \mathbf{c}) \|_2
 $$
 
-## Set number of samples for each face
+## Setting the number of samples for each face
 
-Just sum up all the triangle areas and convert them into a probability distribution.
-If you multiply the number of points you want to sample to the distribution, you will get the number of samples per face.
+Just sum up all the triangle areas and convert them into a probability
+distribution. If you multiply the number of points you want by the sample to the
+distribution, you will get the number of samples per face.
 
+## Sampling points using the Barycentric coordinate
 
-## Sample using the Barycentric coordinate
-
-For two random variables $r_1, r_2$ uniformly distributed from 0 to 1,
+For two random variables $r_1, r_2$ uniformly distributed from 0 to 1, we sample a new point $d$ as follows.
 
 $$
 \mathbf{d} = (1 - \sqrt{r_1})\mathbf{a} + \sqrt{r_1} (1 - r_2) \mathbf{b} + \sqrt{r_1} r_2 \mathbf{c}
 $$
 
-$\mathbf{d}$ is the coordinate of the new sample using the R.V.s $r_1, r_2$.
-
-Intuitively, $r_1$ sets the percentage from vertex $a$ to the opposing edge,
-ing the square-root
-of $r_1$ gives a uniform random point with respect to surface area.
+Intuitively, $r_1$ sets the percentage from vertex $a$ to the opposing edge.
+Taking the square-root of $r_1$ gives a uniform random point with respect to surface area.
 
 {% highlight python %}
 def sample_faces(vertices, faces, n_samples=10**4):
