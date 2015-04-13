@@ -15,6 +15,11 @@ image:
 
 Christopher B. Choy, Michael Stark, Sam Corbett-Davies, Silvio Savarese, **Enrich Object Detection with 2D-3D Registration and Continuous Viewpoint Estimation**, CVPR 2015.
 
+- [Paper](http://chrischoy.github.io/blog/external/cvpr15/choy_cvpr15.pdf)
+- [High Resolution Paper](http://chrischoy.github.io/blog/external/cvpr15/choy_cvpr15_hires.pdf)
+- [Supplementary Material](http://chrischoy.github.io/blog/external/cvpr15/choy_cvpr15_supp.pdf)
+
+
 ## Abstract
 
 A large body of recent work on object detection has focused on exploiting 3D CAD model databases to improve detection performance. Many of these approaches work by aligning exact 3D models to images using templates generated from renderings of the 3D models at a finite set of discrete viewpoints. The training procedures for these approaches, however, are very expensive and require gigabytes of memory and storage, and the viewpoint discretization hampers pose estimation performance. 
