@@ -12,15 +12,40 @@ share: false
 ads: false
 ---
 
-Hello, I’m <b>Christopher Bongsoo Choy</b>. I’m pursuing Ph.D. at <a target="_blank" href="http://www.stanford.edu/">Stanford University</a> and interested in Computer Vision, Machine Learning and Artificial Intelligence.
+Hello, I’m <b>Christopher Bongsoo Choy</b>. I’m pursuing Ph.D. at <a
+target="_blank" href="http://www.stanford.edu/">Stanford University</a> and
+interested in Computer Vision, Machine Learning and Artificial Intelligence.
 
-I'm advised by <a href="http://cvgl.stanford.edu/silvio/"><b>Professor Silvio Savarese</b></a> in the <a href="http://cvgl.stanford.edu/"><b>Computational Vision and Geometry Lab</b></a> in the <a href="http://ai.stanford.edu"><b>Stanford AI Group</b></a>. Before joining Professor Savarese's group, I worked with <a href="http://www.stanford.edu/~boyd/"><b>Professor Steven Boyd</b></a> on the parallel inference on MRF using the <a href="http://stanford.edu/~boyd/admm.html">Alternating Direction Method of Multiplier (ADMM)</a> and <a href="http://geometry.stanford.edu"><b>Professor Leonidas Guibas</b></a> on shapes analysis using the Graph Laplacian.
+I'm advised by <a href="http://cvgl.stanford.edu/silvio/"><b>Professor Silvio
+Savarese</b></a> in the <a href="http://cvgl.stanford.edu/"><b>Computational
+Vision and Geometry Lab</b></a> in the <a
+href="http://ai.stanford.edu"><b>Stanford AI Group</b></a>. Before joining
+Professor Savarese's group, I worked with <a
+href="http://www.stanford.edu/~boyd/"><b>Professor Steven Boyd</b></a> on the
+parallel inference on MRF using the <a
+href="http://stanford.edu/~boyd/admm.html">Alternating Direction Method of
+Multiplier (ADMM)</a> and <a href="http://geometry.stanford.edu"><b>Professor
+Leonidas Guibas</b></a> on shapes analysis using the Graph Laplacian.
 
-Currently, I’m working as a teaching assistance for the Computer Vision class (CS231A) and made the class <a href="http://cs231a.stanford.edu/">website</a>.
+Currently, I’m working as a teaching assistance for the Computer Vision class
+(CS231A) and made the class <a href="http://cs231a.stanford.edu/">website</a>.
 
-In 2014 summer, I worked as the Student Organizer/Web-Master for the Bay Area Vision Meeting and made the <a href="http://cvgl.stanford.edu/BAVM14">website</a>. 
+In 2014 summer, I worked as the Student Organizer/Web-Master for the Bay Area
+Vision Meeting and made the <a
+href="http://cvgl.stanford.edu/BAVM14">website</a>. 
 
-Before coming to Stanford, I worked in the <a href="http://slsp.kaist.ac.kr/">Statistical Learning and Signal Processing Lab</a> in the <a href="www.kaist.ac.kr"><b>Korea Advanced Institute of Science and Technology(KAIST)</b></a> as an undergraduate researcher when I was a senior. I worked on speech recognition using the Semi-Markov Model (an extension of a Hidden Markov Model that has edges going back to the distant past).
+Before coming to Stanford, I worked in the <a
+href="http://slsp.kaist.ac.kr/">Statistical Learning and Signal Processing
+Lab</a> in the <a href="www.kaist.ac.kr"><b>Korea Advanced Institute of Science
+and Technology(KAIST)</b></a> as an undergraduate researcher when I was a
+senior. I worked on speech recognition using the Semi-Markov Model (an
+extension of a Hidden Markov Model that has edges going back to the distant
+past).
+
+I went to [Korea Science
+Academy](http://en.wikipedia.org/wiki/Korea_Science_Academy_of_KAIST)(highschool)
+from 2004-2007. A third of graduates who went to the school together are now
+pursuing Ph.D. degree and 3 of them are now Ph.D.’s at Stanford.
 
 ## Contact
 
