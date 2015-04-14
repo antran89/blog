@@ -3,7 +3,7 @@
 <script>
 MathJax.Hub.Config({
     config: ["MMLorHTML.js"],
-    extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+    extensions: ["tex2jax.js"],
     jax: ["input/TeX"],
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -17,6 +17,7 @@ MathJax.Hub.Config({
         equationNumbers: {
            autoNumber: "AMS",
         },
+        extensions: ["AMSmath.js",  "AMSsymbols.js", "noErrors.js", "noUndefined.js"]
 //        unicode: {
 //           fonts: "STIXGeneral,'Arial Unicode MS'" 
 //        }

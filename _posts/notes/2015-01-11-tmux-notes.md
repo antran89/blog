@@ -86,7 +86,7 @@ set-option -ga update-environment ‘ YOUR_VAR’
 
 ## 256 color in tmux[^3]
 
-Set an environment variable `TERM` to `screen-256color`
+Set an environment variaD`]ble `TERM` to `screen-256color`
 
 {% highlight bash %}
 export TERM=screen-256color
@@ -98,6 +98,16 @@ and in the `.tmux.conf`
 set -g default-terminal “screen-256color”
 {% endhighlight %}
 
+### Reorder TMUX windows[^4]
+
+To swap a window `a` with `b`, use
+
+{% highlight bash %}
+swap-window -s a -t b
+{% endhighlight %}
+
+To swap the current window with the 
 [^1]: http://sourceforge.net/p/tmux/mailman/message/32267463/
 [^2]: http://stackoverflow.com/questions/8645053/how-do-i-start-tmux-with-my-current-environment
 [^3]: http://unix.stackexchange.com/questions/1045/getting-256-colors-to-work-in-tmux
+[^4]: http://superuser.com/questions/343572/how-do-i-reorder-tmux-windows
