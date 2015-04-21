@@ -47,6 +47,21 @@ The repo contains basic Theano RNN implementation as well as references
 
 [Theanet](https://github.com/rakeshvar/theanet/)
 
+### Theano zero padding
+
+Zero padding the input shape
+{% highlight python %}
+v = theano.shared(
+    voxels.reshape(
+        (1, n_vox, 1, n_vox, n_vox)
+    ),
+    name='v',
+    borrow=True
+)
+x = tensor.alloc(0.0, 1, n_vox + 2*pad, 1, n_vox + 2*pad, n_vox + 2*pad)
+x = tensor.set_subtensor(x[:, pad:n_vox+pad, :, pad:n_vox+pad, pad:n_vox+pad], v)
+x.name = 'x'
+{% endhighlight %}
 
 ### Setting up DNN Support
 

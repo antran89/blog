@@ -47,6 +47,20 @@ publisher.connect("tcp://localhost:5555");
 {% endhighlight cpp %}
 
 
-### Different Notes
+### Pitfall of ZMQ variable destruction
 
+If you created a class that contains `zmq::context_t` and `zmq::socket_t` as member variables, you must be aware of the class destruction. Since the socket will go defunct if the context is destroyed first. To prevent such case, you must list `socket_t` later than `context_t` declaration. For instance,
+
+{% highlight cpp %}
+class Test{
+  ...
+  zmq::context_t context;
+  zmq::socket_t socket;
+  ...
+}
+{% endhighlight %}
+
+Class destructor will destroy the variables in the reverse order of construction [^1].
+
+[^1]: http://stackoverflow.com/questions/14688285/c-local-variable-destruction-order
 

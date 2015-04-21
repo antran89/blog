@@ -49,7 +49,7 @@ pursuing Ph.D. degree and 3 of them are now Ph.D.’s at Stanford.
 
 ## Contact
 
-- Email: chrischoy at stanford dot edu
+- Email: <chrischoy@ai.stanford.edu>
 - Address: Office 128, 353 Serra Mall, Gates Building, Stanford, CA 94305 
 
 ## Research Interest
