@@ -33,7 +33,9 @@ width and height of the pooling region.
 
 ## Caffe Imagenet Reference model
 
-It uses Caffe’s `caffe_rng_gaussian` function to fill out initialized blobs. Each layer has a different standard deviation and the way they defined
+It uses Caffe’s `caffe_rng_gaussian` function to fill out the blobs. Each layer
+has a different standard deviation, and the way by which each layer is defined
+consists the following
 
 <pre>
 conv1: 0.01
@@ -85,14 +87,14 @@ class XavierFiller : public Filler<Dtype> {
 };
 {% endhighlight %}
 
-It basically returns uniform sampled array. The scale is defined as
+The code basically returns an uniform-sampled array. The scale is defined as
 
 $$
 S = \sqrt{\frac{3}{|\{W \}|}}
 $$
 
-Where $|\{W\}|$ is the cardinality of the weights (bad math notation).
-Interestingly, from the `bvlc_googlenet/train_val.prototxt`, `std` (presumably standard deviation) is defined but in the initialization, it wasn’t used.
+where $|\{W\}|$ is the cardinality of the weights (bad math notation).
+Interestingly, from the `bvlc_googlenet/train_val.prototxt`, `std` (presumably standard deviation) is defined but it wasn’t used in the Initialization.
 
 {% highlight bash %}
 convolution_param {
