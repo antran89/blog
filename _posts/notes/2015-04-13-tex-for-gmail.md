@@ -13,17 +13,18 @@ image:
   teaser:
 ---
 
-Found an awesome browser extension called **Tex for Gmail**. Once you install
-this, you can read your email with compiled TeX math equations using MathJax.
-One you go to the gmail (not inbox), you can see the added **Tex for Gmail**
-options on the left as usual gmail categories. This app is available on chrome,
-firefox, safari and opera.
+I found an awesome browser extension called **Tex for Gmail**. Once you install
+it, you can read your email with compiled TeX math equations using MathJax.
+If you go to the gmail (inbox is not supported yet), you can see the added
+**Tex for Gmail** options on the left that looks just like the other usual
+gmail categories. This application is available on chrome, firefox, safari and
+opera.
 
-That is not the end, when you are composing an email, **Tex for Gmail** will
-convert the math equations (including inline) into images embedded on the
-email!
+That is not the end of the story. When you are composing an email, **Tex for
+Gmail** will convert math equations (including inline equations) into images
+embedded in the email!
 
 Last, you can convert the math images back to LaTeX equations by selecting and
-doubl-clicking the images.
+double-clicking the images.
 
 URL: <http://alexeev.org/gmailtex.html>
