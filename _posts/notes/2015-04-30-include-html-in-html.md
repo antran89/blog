@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Include HTML in HTML with sed"
+title: "Include an HTML file in another HTML using pure javascript"
 date: 2015-04-30T01:27:03-0700
 modified:
 categories: notes
@@ -23,8 +23,7 @@ document.write('\
 \
     <h1>Add your HTML code here</h1>\
 \
-     <p>Notice however, that you have to escape single quote \'
-    </p>\
+     <p>Notice however, that you have to escape single quote \' </p>\
 \
 ');
 {% endhighlight %}
