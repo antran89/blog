@@ -98,6 +98,7 @@ provides an elegant way to compute mean of data and creates `mean.binaryproto`
 file. To load, use the following excerpt from `Caffe` issue pages [^1].
 
 Create `blob.proto` and put the following scripts into the file.
+
 {% highlight cpp %}
 // Specifies the shape (dimensions) of a Blob.
 message BlobShape {
@@ -121,7 +122,7 @@ message BlobProto {
 message BlobProtoVector {
   repeated BlobProto blobs = 1;
 }
-{% endhighlight % }
+{% endhighlight %}
 
 To load the file in python, compile the above `blob.proto` (or just put the above proto on datum).
 
