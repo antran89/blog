@@ -91,3 +91,48 @@ with env.begin() as txn:
         print key
 {% endhighlight %}
 
+## Loading a binaryproto file
+
+The mean of the data sometimes drastically affect the training. `Caffe`
+provides an elegant way to compute mean of data and creates `mean.binaryproto`
+file. To load, use the following excerpt from `Caffe` issue pages [^1].
+
+Create `blob.proto` and put the following scripts into the file.
+{% highlight cpp %}
+// Specifies the shape (dimensions) of a Blob.
+message BlobShape {
+  repeated int64 dim = 1 [packed = true];
+}
+
+message BlobProto {
+  optional BlobShape shape = 7;
+  repeated float data = 5 [packed = true];
+  repeated float diff = 6 [packed = true];
+
+  // 4D dimensions -- deprecated.  Use "shape" instead.
+  optional int32 num = 1 [default = 0];
+  optional int32 channels = 2 [default = 0];
+  optional int32 height = 3 [default = 0];
+  optional int32 width = 4 [default = 0];
+}
+
+// The BlobProtoVector is simply a way to pass multiple blobproto instances
+// around.
+message BlobProtoVector {
+  repeated BlobProto blobs = 1;
+}
+{% endhighlight % }
+
+To load the file in python, compile the above `blob.proto` (or just put the above proto on datum).
+
+{% highlight python %}
+mean_blob = blob_pb2.BlobProto()
+data = open(os.path.join(LMDB_PATH, "mean.binaryproto"), 'rb').read()
+mean_blob.ParseFromString(data)
+img_mean = np.array(mean_blob.data).reshape(mean_blob.num,
+                                            mean_blob.channels,
+                                            mean_blob.height,
+                                            mean_blob.width)
+{% endhighlight %}
+
+[^1]: https://github.com/BVLC/caffe/issues/290

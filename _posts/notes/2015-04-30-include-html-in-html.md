@@ -29,7 +29,7 @@ document.write('\
 {% endhighlight %}
 
 
-- Adding such backslashes and escaping single quotes might be quite annoying.
+- Adding such backslashes and escaping single quotes manually might be quite annoying. Please use the stream editor, `sed`, to add backslashes and escape single quotes.
 
 {% highlight bash %}
 sed 's/^.*$/&\\/g;' b.js > tmpB.js
