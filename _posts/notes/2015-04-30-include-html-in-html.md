@@ -13,10 +13,11 @@ image:
   teaser:
 ---
 
-Including an HTML file from another HTML file using pure javascript [^1].
+If you want to embed an HTML file from another HTML file using pure
+javascript[^1],
 
-- Use `<script src="b.js"></script>`
-- In `b.js`
+- Put `<script src="b.js"></script>` on the line that you want to import
+- On `b.js`, put the following javascript command
 
 {% highlight javascript %}
 document.write('\
@@ -28,8 +29,12 @@ document.write('\
 ');
 {% endhighlight %}
 
+This will embed the above HTML codes into the original file. The above HTML
+script has to be escaped (put a backslash in front of a next line and a single
+quote).
 
-- Adding such backslashes and escaping single quotes manually might be quite annoying. Please use the stream editor, `sed`, to add backslashes and escape single quotes.
+- Adding such backslashes and escaping single quotes manually might be quite annoying.
+- Please use the stream editor, `sed`, to add backslashes and escape single quotes.
 
 {% highlight bash %}
 sed 's/^.*$/&\\/g;' b.js > tmpB.js
@@ -37,7 +42,8 @@ sed s/\'/"\\\'"/g tmpB.js > escapedB.js
 rm tmpB.js
 {% endhighlight %}
 
-- For SVG, just use `embed`. However, if you want to modify the svg, use the above javascript so that it can modify the svg.
+- For SVG, just use `embed`. However, if you want to modify the svg, use the
+above javascript so that it can modify the svg.
 
 {% highlight html %}
 <embed src="semgem/network.svg"

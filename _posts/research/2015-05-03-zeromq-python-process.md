@@ -1,7 +1,7 @@
 ---
 layout: article
-title: "ZeroMQ and Python Joinable Processes"
-date: 2015-05-03T01:22:20-0700
+title: "Graceful Exit for Python multiprocessing Processes with Infinite Loop and a ZMQ Server Client Example"
+date: 2015-05-03T14:23:45-0700
 modified:
 categories: research
 excerpt:
@@ -15,16 +15,62 @@ image:
 ---
 
 After creating a python process, we have to clean it up by joining the process.
-However, if we have an underlying while loop in the `run()` function, it is
+However, if we have an underlying `while` loop in the `run()` function, it is
 difficult to end such loop.
 
-To simplify joining, I inherited `multiprocessing.Process` and added a member
-variable called `joined` which is of type `multiprocessing.Value(...,
-lock=False)`. I did not use lock since it would slow down by introducing a
-mutex.
+## Graceful Exit for Infinite Loop of Python Process
 
-`ClientProcess` simply send messages and `ServerProcess` prints the received
-messages.
+To simplify joining, I created a class `ClientProcess` that inherits
+`multiprocessing.Process` and added a member variable called `joined` which is
+of type `multiprocessing.Value(..., lock=False)`. I did not use lock since it
+would slow down by introducing a mutex.
+
+{% highlight python %}
+import time
+from multiprocessing import Process, Value
+
+
+class ClientProcess(Process):
+    def __init__(self, epoch):
+        Process.__init__(self)
+        # Lock free value speed comparison
+        # http://stackoverflow.com/questions/26258728/
+        self.joined = Value('b', False, lock=False)
+        self.epoch = Value('i', epoch, lock=False)
+
+    def join(self):
+        self.joined.value = True
+        super(ClientProcess, self).join()
+
+    def run(self):
+        while not self.joined.value:
+            self.epoch.value += 1
+            time.sleep(0.1)
+
+# Main functions
+proc = ClientProcess(1)
+
+proc.start()
+
+print "Join"
+
+for _ in xrange(10):
+    time.sleep(0.2)
+    print proc.epoch.value
+
+proc.join()
+{% endhighlight %}
+
+The process simply increments the value `epoch` every 100ms and we just print
+the value every 200ms. After we finish, we join the process to gracefully exit
+the `ClientProcess`.
+
+
+## ZMQ inter process communication
+
+As a toy application for such joinable process, I used ZMQ (Zero Message Queue)
+to simulate server-client setting. `ClientProcess` simply sends messages and
+`ServerProcess` prints the received messages.
 
 {% highlight python %}
 import sys

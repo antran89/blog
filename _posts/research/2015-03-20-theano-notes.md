@@ -142,8 +142,17 @@ Epoch 4 of 500 took 2.983s
 
 Compare to 4.9s of cuda_convnet and 3.9s of theano.nnet.conv2d, 2.98s of cuDNN is for mnist 1 epoch is pretty impressive.
 
+## Using list of outputs for Theano outputs
+
+If you produce a set of variables and want to use the output in conjunction with other outputs, use the following thechnique[^5].
+
+{% highlight python %}
+grads = T.grad(cost, wrt=params)
+grad_and_cost = theano.function([], grads + [cost])
+{% endhighlight %}
 
 [^1]: http://deeplearning.net/software/theano/tutorial/using_gpu.html
 [^2]: https://developer.nvidia.com/cuDNN
 [^3]: https://github.com/benanne/Lasagne
 [^4]: https://github.com/benanne/Lasagne/tree/master/examples
+[^5]: https://groups.google.com/forum/#!msg/theano-users/_BUMV77qD-Y/qg2iysdwgdcJ
