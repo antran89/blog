@@ -2,7 +2,7 @@
 layout: article
 title: "CNN Framework Caffe Notes"
 date: 2015-02-25T14:26:05-0800
-modified:
+modified: 2015-07-13T22:38:00-0700
 categories: notes
 comments: true
 excerpt:
@@ -91,6 +91,36 @@ New layer called `FreezeLayer` stops the layer modification. Good for fine-tunin
 ## Caffe Validation
 
 When you are using the `test_iter`, make sure that the number of iterations and the batch size matches the number of test images.
+
+
+## Annoying Installation bugs
+
+This is a system specific bugs that I got while compiling caffe master branch (technically http://github.com/chrischoy/caffe-cudnn2)
+
+- /usr/local/lib/libgflags.a: could not read symbols: Bad value
+
+    What is this? Just download the recent gflags from https://github.com/gflags/gflags and install.
+
+- Cannot find library
+
+    Caffe makefile does not by default use $LIBRARY_PATH, $LD_LIBRARY_PATH environment variables. Just hard set the LIBRARY_PATH in Makefile.config to include the path you want to include
+
+    /usr/bin/ld: cannot find -lcblas
+
+
+## Compiling Caffe when you don't have sudo access
+
+When you are working on servers where you don't have a sudo access, things can be more difficult than it should be.
+
+1. Use anaconda
+
+    At least this will install lapack and atlas which will 
+    conda install atlas
+
+2. Add anaconda/lib to Makefile.config and system env variable $LD_LIBRARY_PATH
+
+
+
 
 [^1]: http://caffe.berkeleyvision.org/gathered/examples/imagenet.html
 [^2]: http://stackoverflow.com/questions/28031841/hdf5-diag-error-detected-in-hdf5-1-8-11
