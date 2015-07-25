@@ -119,7 +119,16 @@ When you are working on servers where you don't have a sudo access, things can b
 
 2. Add anaconda/lib to Makefile.config and system env variable $LD_LIBRARY_PATH
 
+    This will save installing lapack and ATLAS
 
+3. Download cuDNN and copy the header to include path and static and dynamic libraries to lib path
+
+    /path/to/your/custom/include
+    /path/to/your/custom/lib
+
+4. Install necessary packages
+
+    For my case, I had to compile new gflags, boost, 
 
 
 [^1]: http://caffe.berkeleyvision.org/gathered/examples/imagenet.html
