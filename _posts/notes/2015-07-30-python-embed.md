@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "IPython embed"
->ate: 2015-07-30T10:33:10-0700
+date: 2015-07-30T10:33:10-0700
 modified:
 categories: notes
 comments: true
