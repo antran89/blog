@@ -2,7 +2,7 @@
 layout: article
 title: "CNN Framework Caffe Notes"
 date: 2015-02-25T14:26:05-0800
-modified: 2015-07-13T22:38:00-0700
+modified: 2015-07-31T11:33:00-0700
 categories: notes
 comments: true
 excerpt:
@@ -130,6 +130,9 @@ When you are working on servers where you don't have a sudo access, things can b
 
     For my case, I had to compile new gflags, boost, 
 
+## Theano Caffe Interoperability
+
+  <https://github.com/tnarihi/tnarihi-caffe-helper/blob/master/python/caffe_helper/theano_util.py>
 
 [^1]: http://caffe.berkeleyvision.org/gathered/examples/imagenet.html
 [^2]: http://stackoverflow.com/questions/28031841/hdf5-diag-error-detected-in-hdf5-1-8-11
