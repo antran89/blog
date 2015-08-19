@@ -41,7 +41,7 @@ $$
 \end{align*}
 $$
 
-where $\delta_{ij}$ is a kronecker delta $\delta_{ij} = 1$ if $i = j$, otherwise $0$.
+where $\delta\_{ij}$ is a kronecker delta $\delta\_{ij} = 1$ if $i = j$, otherwise $0$.
 
 $$
 \begin{align*}
