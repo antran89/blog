@@ -15,10 +15,11 @@ image:
 ---
 
 
-If you want to start interactive python session in the middle of python code.
-The following trick might be useful.
+If you want to start an interactive python session in the middle of python
+code, the following trick might be useful.
 
-Put the following line in the section you want to start interactive python session.
+Put the following line in the section you want to start an interactive python
+session.
 
 {% highlight python %}
   from IPython import embed; embed()

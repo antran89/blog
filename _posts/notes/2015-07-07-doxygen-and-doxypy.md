@@ -15,7 +15,11 @@ image:
 ---
 
 
-Doxygen is one of the most popular code documentation generation tool. However, Doxygen can’t properly handle python docstring. Instead, by preprocessing the python files using doxygen, you can use Doxygen commands inside the python documentation string [^1][^2]. There is a similar package, doxypyp, which tires to replace all the Doxygen specific commands with human readable strings.
+Doxygen is one of the most popular code documentation generation tools. However,
+Doxygen can’t properly handle python docstrings. Instead, by preprocessing the
+python files using doxygen, you can use Doxygen commands inside python
+documentation strings [^1][^2]. There is a similar package, doxypyp, which tries
+to replace all the Doxygen specific commands with readable strings.
 
 In this post, I’ll summarize and give a brief tutorial on how to use Doxypypy.
 
@@ -30,7 +34,8 @@ $ pip install doxypypy
 
 ## Write documentation
 
-Write documentations for python files like below. The following code snippet is excerpted from doxypypy sample code [^3].
+Write documentation for python files as below. The following code snippet is
+excerpted from doxypypy sample code [^3].
 
 {% highlight python %}
 #!/usr/bin/env python
@@ -74,7 +79,7 @@ def fetch_bigtable_rows(big_table, keys, other_silly_variable=None):
     pass
 {% endhighlight %}
 
-For latex math equations, append `r` to make the docstring formatted in a raw string.
+For latex math equations, append `r` to format the docstring into a raw string.
 
 {% highlight python %}
 class Polynomial(object):
@@ -103,9 +108,10 @@ class Polynomial(object):
 
 ## Create Doxyfile and edit
 
-`Doxyfile` is required to convert your project into documentation.
+`Doxyfile` is required to convert your project into documentation files.
 
-Generate a default Doxyfile and modify so that it can use doxypypy as a preprocessing [^4][^5].
+Generate a default Doxyfile and modify so that Doxygen can use doxypypy as a
+preprocessing stage [^4][^5].
 
 {% highlight bash %}
 $ doxygen -g
