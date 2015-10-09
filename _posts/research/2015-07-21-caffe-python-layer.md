@@ -14,10 +14,27 @@ image:
   teaser:
 ---
 
-Python layer in Caffe can speed up development process
-https://github.com/BVLC/caffe/pull/1703
+Python layer in Caffe can speed up development process [Issue1703](https://github.com/BVLC/caffe/pull/1703)
 
-A gist from Evan Shelhamer <https://gist.github.com//shelhamer/8d9a94cf75e6fb2df221> is very easy to understand.
+## Compile WITH_PYTHON_LAYER option
+
+First, you have to build Caffe with `WITH_PYTHON_LAYER` option [^1]. Run `make
+clean` to delete all the compiled binaries. Then,
+
+{% highlight bash %}
+WITH_PYTHON_LAYER=1 make && make pycaffe
+{% endhighlight %}
+
+If you skip this, caffe will complain that layer factory function can't find Python layer.
+
+{% highlight bash %}
+layer_factory.hpp:77] Check failed: registry.count(type) == 1 (0 vs. 1) Unknown layer type: Python
+{% endhighlight %}
+
+## Python Layer
+
+A [gist](https://gist.github.com//shelhamer/8d9a94cf75e6fb2df221) from Evan
+Shelhamer summarizes the basics of the python layer.
 
 {% highlight python %}
 ...
@@ -76,3 +93,5 @@ class EuclideanLossLayer(caffe.Layer):
                 sign = -1
             bottom[i].diff[...] = sign * self.diff / bottom[i].num
 {% endhighlight %}
+
+[^1]: https://github.com/BVLC/caffe/issues/2093

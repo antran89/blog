@@ -14,7 +14,9 @@ comments: true
 mathjax : true
 ---
 
-Caffe is one of the most popular open-source neural network frameworks.[^1] It is modular, clean, and fast. To modify the network to my liking, I defined a layer that produces cosine and sine of radian inputs.
+Caffe is one of the most popular open-source neural network frameworks.[^1] It
+is modular, clean, and fast. To modify the network to my liking, I defined a
+layer that produces cosine and sine of radian inputs.
 
 
 ## Files to modify or create
@@ -30,7 +32,9 @@ Relative from the `$(CAFFE_HOME)`
 
 ## File 1: caffe.proto
 
-You have to give a new index to your new layer. Look for `next available ID`. There are two lines containing the phrase. Increment the `next available ID` and define the new layer.
+You have to give a new index to your new layer. Look for `next available ID`.
+There are two lines containing the phrase. Increment the `next available ID`
+and define the new layer.
 
 ## File 2: layer_facctory.cpp
 
@@ -38,11 +42,13 @@ You have to add two lines that defines switch case of layers
 
 ## File 3: Layer Header
 
-Define your layer in a common layer header file. Use either `common_layers.hpp` or `vision_layers.hpp`, depending on the type of the layer.
+Define your layer in a common layer header file. Use either `common_layers.hpp`
+or `vision_layers.hpp`, depending on the type of the layer.
 
 ## File 4 & 5 : Defining a layer
 
-The layer has to inherit the `Layer` virtual class. The virtual functions that you have to implement are the ones defined as  `= 0` which are
+The layer has to inherit the `Layer` virtual class. The virtual functions that
+you have to implement are the ones defined as  `= 0` which are
 
 {% highlight cpp %}
 virtual void Reshape(const vector<Blob<Dtype>*>& bottom,
@@ -56,7 +62,10 @@ virtual void Backward_cpu(const vector<Blob<Dtype>*>& top,
 
 ## File 6 : Test File
 
-All the layers in the caffe must have the corresponding unit test file. The unit test must thoroughly check all the functionalities implemented. Make a file `/src/caffe/test/test_new_layer.cpp` and use provided caffe unit test macros.
+All the layers in the caffe must have the corresponding unit test file. The
+unit test must thoroughly check all the functionalities implemented. Make a
+file `/src/caffe/test/test_new_layer.cpp` and use provided caffe unit test
+macros.
 
 {% highlight cpp %}
 EXPECT_NEAR
@@ -80,7 +89,8 @@ make test
 
 ## Implementation Detail
 
-When you implement the functions, try to use the macros and functions provided by caffe to minimize your workload.
+When you implement the functions, try to use the macros and functions provided
+by caffe to minimize your workload.
 
 
 * Blob offset
@@ -107,39 +117,50 @@ When you implement the functions, try to use the macros and functions provided b
 
 ## CUDA brief summary
 
-    Since the Caffe framework heavily relies on CUDA, I’ll briefly summarize the basics of CUDA.
+Since the Caffe framework heavily relies on CUDA, I’ll briefly summarize the basics of CUDA.
 
-    - Function decorators
+- Function decorators
 
-        In CUDA terminology, device refers to a CUDA capable GPU and host refers to the CPU side.
+    In CUDA terminology, device refers to a CUDA capable GPU and host refers to the CPU side.
 
-        There are two function decorators `__device__` and `__global__`. If you put either of them in front of a function, the function is compiled as a CUDA kernel. You can call a `__device__` kernel within a CUDA kernel whereas you can call a `__global__` kernel from the host.
+    There are two function decorators `__device__` and `__global__`. If you put
+    either of them in front of a function, the function is compiled as a CUDA
+    kernel. You can call a `__device__` kernel within a CUDA kernel whereas you
+    can call a `__global__` kernel from the host.
 
-        A kernel function runs in parallel. There are two levels of parallelism : threads and blocks. Blocks consists of multiple threads and a collection of blocks is called as a grid. However, threads are divide into groups of 32 threads called wraps and it is best to use multiple of 32 threads. 
+    A kernel function runs in parallel. There are two levels of parallelism :
+    threads and blocks. Blocks consists of multiple threads and a collection of
+    blocks is called as a grid. However, threads are divide into groups of 32
+    threads called wraps and it is best to use multiple of 32 threads. 
 
-        You can specify the number of execution blocks that you will run from CPU side when you launch a kernel. For example, if you want to lanch a kernel called `kernel_function`, simply put the following on the CPU side code. `kernel_function<<<N_BLOCKS, N_THREADS>>>(arguments)`. This will launch `N_BLOCKS` of blocks with `N_THREADS` number of threads. [^2]
+    You can specify the number of execution blocks that you will run from CPU
+    side when you launch a kernel. For example, if you want to lanch a kernel
+    called `kernel_function`, simply put the following on the CPU side code.
+    `kernel_function<<<N_BLOCKS, N_THREADS>>>(arguments)`. This will launch
+    `N_BLOCKS` of blocks with `N_THREADS` number of threads. [^2]
 
 {% comment %}
-        There aare two 
     I've been using CUDA for my research since CUDA 4.5, but the concepts of grids, threads, and blocks are sometimes confusing. Since caffe also requires CUDA programming, I will quickly summarize the concepts as well as the basics.
-
     In theory, each thread will be executed in parallel, but stream processors can sometimes handle multiple threads. In each block, there are multiple threads and a grid contains multiple blocks.
-
     All CUDA kernels must start with either `__device__` or `__global__`. `__device__` functions are only accessible from CUDA kernels, whereas `__global__` functions can be launched from the CPU side.
 {% endcomment %}
 
 
 ## Angle To Trigonometric Layer
 
-The layer takes $N \times C \times 1 \times 1$ `Blob` and produces $N \times 2C \times 1 \times 1$ `Blob`. The angle must be in radian (which is none of our concern since the NN weight will adjust automatically).
+The layer takes $N \times C \times 1 \times 1$ `Blob` and produces $N \times 2C
+\times 1 \times 1$ `Blob`. The angle must be in radian (which is none of our
+concern since the NN weight will adjust automatically).
 
-For each input it produces two values $sin(x)$ and $cos(x)$. Let’s concatenate $n$ sines with $n$ cosines. If we define $y_i = \sin(x_i)$ and $y_{i+C} = \cos(x_i)$, the gradient will be
+For each input it produces two values $sin(x)$ and $cos(x)$. Let’s concatenate
+$n$ sines with $n$ cosines. If we define $y_i = \sin(x_i)$ and $y_{i+C} =
+\cos(x_i)$, the gradient will be
 
 $$
 \begin{align}
 \frac{\partial E(y_i, y_{i+C}, \dots)}{\partial x_i} & = \frac{\partial E(y_i, \dots)}{\partial y_i} \frac{\partial y_i}{\partial x_i} + \frac{\partial E(y_{i + C}, \dots)}{\partial y_{i+C}} \frac{\partial y_{i + C}}{\partial x_i}\\
-& = \frac{\partial E(y_i, \dots)}{\partial y_i} \frac{\partial \sin(x_i)}{\partial x_i} + \frac{\partial E(y_{i + C}, \dots)}{\partial \cos(x_i)} \frac{\partial y_{i + C}}{\partial x_i}\\
-& = \frac{\partial E(y_i, \dots)}{\partial y_i} \cos(x_i) - \frac{\partial E(y_{i + C}, \dots)}{\partial \cos(x_i)} \sin(x_i)
+& = \frac{\partial E(y_i, \dots)}{\partial y_i} \frac{\partial \sin(x_i)}{\partial x_i} + \frac{\partial E(y_{i + C}, \dots)}{\partial y_(i + C)} \frac{\partial y_{i + C}}{\partial x_i}\\
+& = \frac{\partial E(y_i, \dots)}{\partial y_i} \cos(x_i) - \frac{\partial E(y_{i + C}, \dots)}{\partial y_{i + C}} \sin(x_i)
 \end{align}
 $$
 
@@ -314,6 +335,22 @@ INSTANTIATE_CLASS(AngleToTrigLayer);
 
 }  // namespace caffe
 {% endhighlight %}
+
+# Loss Layer
+
+A loss layer does not have any top outputs since a loss is the final output.
+However, in caffe, you can use the top layers to set the scalers of a
+specific loss layer.
+
+A scaler is fed into the loss layer using
+
+{% highlight cpp %}
+// Scale gradient
+const Dtype loss_weight = top[0]->cpu_diff()[0];
+{% endhighlight %}
+
+This is common practice and is used in many conventional loss layers including
+Euclidean Loss, Contrastive Loss, etc.
 
 [^1]: <http://caffe.berkeleyvision.org>
 [^2]: <http://www.nvidia.com/docs/IO/116711/sc11-cuda-c-basics.pdf>
