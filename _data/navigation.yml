@@ -3,29 +3,25 @@
 - title: All Posts
   url: /posts/
   excerpt: "Blog Posts"
-  image: 400x250.gif
 
 - title: Notes
   url: /notes/
   excerpt: "Notes"
-  image: 400x250.gif
 
 #- title: Articles
 #  url: /articles/
 #  excerpt: "Blog Posts"
 #  image: 400x250.gif
 
-- title: Projects
-  url: /projects/
-  excerpt: "Projects"
-  image: 400x250.gif
+# - title: Projects
+#   url: /projects/
+#   excerpt: "Projects"
+#   image: 400x250.gif
 
 - title: Research
   url: /research/
-  excerpt: "My Research"
-  image: 400x250.gif
+  excerpt: "Random thoughts"
 
 - title: About
   url: /about/
   excerpt: "About me"
-  image: 400x250.gif

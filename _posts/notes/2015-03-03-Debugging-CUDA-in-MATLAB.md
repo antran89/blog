@@ -2,7 +2,7 @@
 layout: article
 title: "Debugging CUDA + Mex in MATLAB"
 date: 2015-03-03T10:58:37-0800
-modified:
+modified: 2015-10-14T01:21:48-0700
 categories: notes
 comments: true
 excerpt:
@@ -13,9 +13,7 @@ image:
   teaser:
 ---
 
-I use CUDA to speed up many standard computations. In my last CVPR submission, I implemented the Conjugate Gradient method and convolution in CUDA. To further speed up my fast prototyping, I use *python* or *Matlab* as a wrapper.
-
-In this post, I will explain about how to debug CUDA binaries with MATLAB binding.
+Compiling a CUDA code in MATLAB and debugging it can be little tricky. Luckily, I succeed after few attemps and I’ll summarize what I did for the future reference.
 
 First let’s compile your CUDA + Mex file. I made a simple MATLAB code that compiles CUDA files.
 

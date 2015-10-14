@@ -3,21 +3,19 @@ layout: article
 title: "Making a Caffe Layer"
 except: ""
 date: 2015-02-26T15:18:12-0800
-modified:
+modified: 2015-10-14T01:30:51-0700
 ads: true
 toc: true
 category: research
 tags: [Caffe, Layer]
 image:
-  feature: 
+  feature:
 comments: true
 mathjax : true
 ---
 
-Caffe is one of the most popular open-source neural network frameworks.[^1] It
-is modular, clean, and fast. To modify the network to my liking, I defined a
-layer that produces cosine and sine of radian inputs.
-
+Caffe is one of the most popular open-source neural network frameworks. It
+is modular, clean, and fast. Extending it is tricky but not as difficult as extending other frameworks.
 
 ## Files to modify or create
 
@@ -146,7 +144,7 @@ Since the Caffe framework heavily relies on CUDA, I’ll briefly summarize the b
 {% endcomment %}
 
 
-## Angle To Trigonometric Layer
+## Angle To Sine Cosine Layer
 
 The layer takes $N \times C \times 1 \times 1$ `Blob` and produces $N \times 2C
 \times 1 \times 1$ `Blob`. The angle must be in radian (which is none of our

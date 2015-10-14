@@ -20,13 +20,13 @@ image:
   $
 </div>
 
-Matrix norms and singular values have special relationships. In this post, I would like to summarize all matrix norms and related norms and derive relationships between them.
+Matrix norms and singular values have special relationships. Before I forget about them, I’ll summarized them in this post.
 
 ### Definitions
 * Schatten p-Norm
 
     The Schatten p-Norm is defined as the following.[^2]
-    
+
     $$
     \|X\|_{S_p} := \left( \sum_i^n s_i(X)^p \right)^\frac{1}{p}
     $$

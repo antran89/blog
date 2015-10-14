@@ -2,7 +2,7 @@
 layout: article
 title: "Neural Network Weight Initialization"
 date: 2015-04-16T16:25:46-0700
-modified:
+modified: 2015-10-14T01:40:35-0700
 categories: research
 excerpt:
 mathjax: true
@@ -15,15 +15,11 @@ image:
   teaser:
 ---
 
-In Neural Network training, random initialization is not as important as
-training procedures such as RMSProb, SGD, Momentum, Nesterov’s, etc. However,
-setting the right scale for weights can impact the training time.
+In Neural Network training, random initialization is not a critical factor, but
+it can significantly slow down the training. Setting the right scale for
+weights can impact the training time.
 
-In [Lasagne](), the weight is appropriately scaled.
-
-$$
-S = \sqrt\frac{c}{N_i + N_o}
-$$
+In [Lasagne](), the weight is appropriately using the scaler $S\sqrt\frac{c}{N_i + N_o}$.
 
 For instance, for a convolution layer, $N_i = C_i \times H_W \times W_W$, $N_o
 = C_o \times H_W \times W_W$. When we have a pooling layer this could be scaled

@@ -2,7 +2,7 @@
 layout: article
 title: "Reading protobuf DB in Python"
 date: 2015-04-27T20:05:48-0700
-modified:
+modified: 2015-10-14T01:47:00-0700
 categories: research
 excerpt:
 comments: true
@@ -16,10 +16,9 @@ image:
 
 [Caffe](http://github.com/BVLC/caffe) uses Google Protocol buffer and LMDB,
 LevelDB to save data in a single unified database file. This allows faster data
-loading which is crucial if you cannot cache all your data.
-
-This type of database is a standard for Caffe and I’ll cover how to load such
-database in Python.
+loading. Faster loading is not really important since many frameworks such as
+Caffe and Block use a separate process for loading data. Still, it would be
+beneficial to load some of data just for debugging purpose.
 
 ## Saving Database in LMDB
 
